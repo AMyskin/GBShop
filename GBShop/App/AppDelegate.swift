@@ -15,7 +15,48 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let auth = requestFactory.makeAuthRequestFatory()
-        auth.login(userName: "Somebody", password: "mypassword") { response in
+        auth.login(userName: "MocUser", password: "MocPassword") { response in
+            switch response.result {
+            case .success(let login):
+                print(login)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+        
+        auth.registration(
+            userId: 11,
+            userName: "Test",
+            password: "Pass",
+            email: "a@a.com",
+            gender: "m",
+            creditCard: "9872389-2424-234224-234",
+            bio: "This is good! I think I will switch to another language") { response in
+            switch response.result {
+            case .success(let login):
+                print(login)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+        
+        auth.changeUserData(
+            userId: 12,
+            userName: "NO",
+            password: "Data",
+            email: "a@a.com",
+            gender: "m",
+            creditCard: "9872389-2424-234224-234",
+            bio: "This is good! I think I will switch to another language") { response in
+            switch response.result {
+            case .success(let login):
+                print(login)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+        
+        auth.logout(userId: 1) { response in
             switch response.result {
             case .success(let login):
                 print(login)
