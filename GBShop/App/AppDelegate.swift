@@ -23,8 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print(error.localizedDescription)
             }
         }
-        
-        auth.registration(
+        let regFactory = requestFactory.makeRegistrationRequestFatory()
+        regFactory.registration(
             userId: 11,
             userName: "Test",
             password: "Pass",
@@ -39,8 +39,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print(error.localizedDescription)
             }
         }
+        let changeFactory = requestFactory.makeChangeUserRequestFactory()
         
-        auth.changeUserData(
+        changeFactory.changeUserData(
             userId: 12,
             userName: "NO",
             password: "Data",
@@ -55,8 +56,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print(error.localizedDescription)
             }
         }
-        
-        auth.logout(userId: 1) { response in
+        let logoutFactory = requestFactory.makeLogoutRequestFatory()
+        logoutFactory.logout(userId: 1) { response in
             switch response.result {
             case .success(let login):
                 print(login)
