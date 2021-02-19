@@ -106,6 +106,44 @@ class RequestFactoryTests: XCTestCase {
 
         waitForExpectations(timeout: 5)
     }
+    
+    func testCatalog() throws {
+
+        let catalog = try XCTUnwrap(requestFactory).makeFetchCatalogFactory()
+        
+        let catalogUser = expectation(description: "Catalog")
+        catalog.getCatalog(pageNumber: 1, idCategory: 1) { response in
+            switch response.result {
+            case .success(let request):
+                XCTAssertEqual(request.count, 2)
+                XCTAssertEqual(request.first?.productName, "Ноутбук")
+                catalogUser.fulfill()
+            case .failure(let err):
+                XCTFail(err.localizedDescription)
+            }
+        }
+
+        waitForExpectations(timeout: 5)
+    }
+    
+    func testFetchGood() throws {
+
+        let good = try XCTUnwrap(requestFactory).makeFetchGoodFactory()
+        
+        let googUser = expectation(description: "Good")
+        good.fetchGoodById(idProduct: 1) { response in
+            switch response.result {
+            case .success(let request):
+                XCTAssertEqual(request.result, 1)
+                XCTAssertEqual(request.productName, "Ноутбук")
+                googUser.fulfill()
+            case .failure(let err):
+                XCTFail(err.localizedDescription)
+            }
+        }
+
+        waitForExpectations(timeout: 10)
+    }
 
 
 
