@@ -65,16 +65,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //                print(error.localizedDescription)
 //            }
 //        }
-        
-        let catalog = requestFactory.makeFetchCatalogFactory()
-        catalog.getCatalog(pageNumber: 1, idCategory: 1) { response in
-            switch response.result {
-            case .success(let login):
-                print(login)
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
+//        
+//        let catalog = requestFactory.makeFetchCatalogFactory()
+//        catalog.getCatalog(pageNumber: 1, idCategory: 1) { response in
+//            switch response.result {
+//            case .success(let login):
+//                print(login)
+//            case .failure(let error):
+//                print(error.localizedDescription)
+//            }
+//        }
         
 //        let good = requestFactory.makeFetchGoodFactory()
 //        good.fetchGoodById(idProduct: 1) { response in
