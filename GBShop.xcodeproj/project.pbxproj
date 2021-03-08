@@ -33,6 +33,35 @@
 		1BC7D1B925D8687400AF0BA2 /* LogoutResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC7D1B825D8687400AF0BA2 /* LogoutResult.swift */; };
 		1BC7D1BE25D868DE00AF0BA2 /* RegistrationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC7D1BD25D868DE00AF0BA2 /* RegistrationResult.swift */; };
 		1BC7D1D125D86EB400AF0BA2 /* ChangeUserResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC7D1D025D86EB400AF0BA2 /* ChangeUserResult.swift */; };
+		1BCEC03E25F6649200868498 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCEC03D25F6649200868498 /* LoginViewController.swift */; };
+		1BCEC04625F6649D00868498 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCEC04525F6649D00868498 /* LoginView.swift */; };
+		1BCEC04B25F6656600868498 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCEC04A25F6656600868498 /* UIColor.swift */; };
+		1BCEC05125F665EC00868498 /* AppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCEC05025F665EC00868498 /* AppButton.swift */; };
+		1BCEC05625F6660800868498 /* AppTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCEC05525F6660800868498 /* AppTextField.swift */; };
+		1BCEC05B25F6675100868498 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCEC05A25F6675100868498 /* UIView.swift */; };
+		1BCEC07025F6A48000868498 /* LogOutPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCEC06925F6A48000868498 /* LogOutPresenter.swift */; };
+		1BCEC07125F6A48000868498 /* LogOutWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCEC06A25F6A48000868498 /* LogOutWorker.swift */; };
+		1BCEC07225F6A48000868498 /* LogOutRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCEC06B25F6A48000868498 /* LogOutRouter.swift */; };
+		1BCEC07325F6A48000868498 /* LogOutModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCEC06C25F6A48000868498 /* LogOutModels.swift */; };
+		1BCEC07425F6A48000868498 /* LogOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCEC06D25F6A48000868498 /* LogOutViewController.swift */; };
+		1BCEC07525F6A48000868498 /* LogOutAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCEC06E25F6A48000868498 /* LogOutAssembly.swift */; };
+		1BCEC07625F6A48000868498 /* LogOutInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCEC06F25F6A48000868498 /* LogOutInteractor.swift */; };
+		1BCEC0B425F6AF2000868498 /* RegPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCEC0AD25F6AF2000868498 /* RegPresenter.swift */; };
+		1BCEC0B525F6AF2000868498 /* RegWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCEC0AE25F6AF2000868498 /* RegWorker.swift */; };
+		1BCEC0B625F6AF2000868498 /* RegRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCEC0AF25F6AF2000868498 /* RegRouter.swift */; };
+		1BCEC0B725F6AF2000868498 /* RegModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCEC0B025F6AF2000868498 /* RegModels.swift */; };
+		1BCEC0B825F6AF2000868498 /* RegViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCEC0B125F6AF2000868498 /* RegViewController.swift */; };
+		1BCEC0B925F6AF2000868498 /* RegAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCEC0B225F6AF2000868498 /* RegAssembly.swift */; };
+		1BCEC0BA25F6AF2000868498 /* RegInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCEC0B325F6AF2000868498 /* RegInteractor.swift */; };
+		1BCEC0C525F6B09A00868498 /* UserInfoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCEC0BE25F6B09A00868498 /* UserInfoPresenter.swift */; };
+		1BCEC0C625F6B09A00868498 /* UserInfoWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCEC0BF25F6B09A00868498 /* UserInfoWorker.swift */; };
+		1BCEC0C725F6B09A00868498 /* UserInfoRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCEC0C025F6B09A00868498 /* UserInfoRouter.swift */; };
+		1BCEC0C825F6B09A00868498 /* UserInfoModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCEC0C125F6B09A00868498 /* UserInfoModels.swift */; };
+		1BCEC0C925F6B09A00868498 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCEC0C225F6B09A00868498 /* UserInfoViewController.swift */; };
+		1BCEC0CA25F6B09A00868498 /* UserInfoAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCEC0C325F6B09A00868498 /* UserInfoAssembly.swift */; };
+		1BCEC0CB25F6B09A00868498 /* UserInfoInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCEC0C425F6B09A00868498 /* UserInfoInteractor.swift */; };
+		1BCEC0E425F6B20D00868498 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCEC0E325F6B20D00868498 /* LoginRouter.swift */; };
+		1BCEC0E925F6B43A00868498 /* LoginWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCEC0E825F6B43A00868498 /* LoginWorker.swift */; };
 		1BEEBA2725DC4BD400268F0A /* BaseURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEEBA2625DC4BD400268F0A /* BaseURL.swift */; };
 		1BEEBA3125DC52C700268F0A /* Registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEEBA3025DC52C700268F0A /* Registration.swift */; };
 		1BEEBA3925DC52E100268F0A /* RegistrationRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEEBA3825DC52E100268F0A /* RegistrationRequestFactory.swift */; };
@@ -92,6 +121,35 @@
 		1BC7D1B825D8687400AF0BA2 /* LogoutResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutResult.swift; sourceTree = "<group>"; };
 		1BC7D1BD25D868DE00AF0BA2 /* RegistrationResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationResult.swift; sourceTree = "<group>"; };
 		1BC7D1D025D86EB400AF0BA2 /* ChangeUserResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeUserResult.swift; sourceTree = "<group>"; };
+		1BCEC03D25F6649200868498 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		1BCEC04525F6649D00868498 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		1BCEC04A25F6656600868498 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		1BCEC05025F665EC00868498 /* AppButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppButton.swift; sourceTree = "<group>"; };
+		1BCEC05525F6660800868498 /* AppTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTextField.swift; sourceTree = "<group>"; };
+		1BCEC05A25F6675100868498 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		1BCEC06925F6A48000868498 /* LogOutPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutPresenter.swift; sourceTree = "<group>"; };
+		1BCEC06A25F6A48000868498 /* LogOutWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutWorker.swift; sourceTree = "<group>"; };
+		1BCEC06B25F6A48000868498 /* LogOutRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutRouter.swift; sourceTree = "<group>"; };
+		1BCEC06C25F6A48000868498 /* LogOutModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutModels.swift; sourceTree = "<group>"; };
+		1BCEC06D25F6A48000868498 /* LogOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutViewController.swift; sourceTree = "<group>"; };
+		1BCEC06E25F6A48000868498 /* LogOutAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutAssembly.swift; sourceTree = "<group>"; };
+		1BCEC06F25F6A48000868498 /* LogOutInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutInteractor.swift; sourceTree = "<group>"; };
+		1BCEC0AD25F6AF2000868498 /* RegPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegPresenter.swift; sourceTree = "<group>"; };
+		1BCEC0AE25F6AF2000868498 /* RegWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegWorker.swift; sourceTree = "<group>"; };
+		1BCEC0AF25F6AF2000868498 /* RegRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegRouter.swift; sourceTree = "<group>"; };
+		1BCEC0B025F6AF2000868498 /* RegModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegModels.swift; sourceTree = "<group>"; };
+		1BCEC0B125F6AF2000868498 /* RegViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegViewController.swift; sourceTree = "<group>"; };
+		1BCEC0B225F6AF2000868498 /* RegAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegAssembly.swift; sourceTree = "<group>"; };
+		1BCEC0B325F6AF2000868498 /* RegInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegInteractor.swift; sourceTree = "<group>"; };
+		1BCEC0BE25F6B09A00868498 /* UserInfoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoPresenter.swift; sourceTree = "<group>"; };
+		1BCEC0BF25F6B09A00868498 /* UserInfoWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoWorker.swift; sourceTree = "<group>"; };
+		1BCEC0C025F6B09A00868498 /* UserInfoRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoRouter.swift; sourceTree = "<group>"; };
+		1BCEC0C125F6B09A00868498 /* UserInfoModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoModels.swift; sourceTree = "<group>"; };
+		1BCEC0C225F6B09A00868498 /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
+		1BCEC0C325F6B09A00868498 /* UserInfoAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoAssembly.swift; sourceTree = "<group>"; };
+		1BCEC0C425F6B09A00868498 /* UserInfoInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoInteractor.swift; sourceTree = "<group>"; };
+		1BCEC0E325F6B20D00868498 /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
+		1BCEC0E825F6B43A00868498 /* LoginWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWorker.swift; sourceTree = "<group>"; };
 		1BEEBA2625DC4BD400268F0A /* BaseURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURL.swift; sourceTree = "<group>"; };
 		1BEEBA3025DC52C700268F0A /* Registration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration.swift; sourceTree = "<group>"; };
 		1BEEBA3825DC52E100268F0A /* RegistrationRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationRequestFactory.swift; sourceTree = "<group>"; };
@@ -209,6 +267,8 @@
 			children = (
 				1B9146D525D5968B00A1D1D2 /* Assets.xcassets */,
 				1B9146D725D5968B00A1D1D2 /* LaunchScreen.storyboard */,
+				1BCEC04A25F6656600868498 /* UIColor.swift */,
+				1BCEC05A25F6675100868498 /* UIView.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -237,6 +297,11 @@
 		1B91470325D597E100A1D1D2 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				1BCEC06525F67F0100868498 /* UpdateUser */,
+				1BCEC06425F67EF200868498 /* Registration */,
+				1BCEC06325F67ECE00868498 /* LogOut */,
+				1BCEC04F25F665DA00868498 /* Common */,
+				1BCEC03B25F6644400868498 /* Login */,
 			);
 			path = Flows;
 			sourceTree = "<group>";
@@ -295,6 +360,68 @@
 				1BC7D1B025D7BAC200AF0BA2 /* RequestFactory.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		1BCEC03B25F6644400868498 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				1BCEC03D25F6649200868498 /* LoginViewController.swift */,
+				1BCEC04525F6649D00868498 /* LoginView.swift */,
+				1BCEC0E825F6B43A00868498 /* LoginWorker.swift */,
+				1BCEC0E325F6B20D00868498 /* LoginRouter.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		1BCEC04F25F665DA00868498 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				1BCEC05025F665EC00868498 /* AppButton.swift */,
+				1BCEC05525F6660800868498 /* AppTextField.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		1BCEC06325F67ECE00868498 /* LogOut */ = {
+			isa = PBXGroup;
+			children = (
+				1BCEC06925F6A48000868498 /* LogOutPresenter.swift */,
+				1BCEC06A25F6A48000868498 /* LogOutWorker.swift */,
+				1BCEC06B25F6A48000868498 /* LogOutRouter.swift */,
+				1BCEC06C25F6A48000868498 /* LogOutModels.swift */,
+				1BCEC06D25F6A48000868498 /* LogOutViewController.swift */,
+				1BCEC06E25F6A48000868498 /* LogOutAssembly.swift */,
+				1BCEC06F25F6A48000868498 /* LogOutInteractor.swift */,
+			);
+			path = LogOut;
+			sourceTree = "<group>";
+		};
+		1BCEC06425F67EF200868498 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				1BCEC0AD25F6AF2000868498 /* RegPresenter.swift */,
+				1BCEC0AE25F6AF2000868498 /* RegWorker.swift */,
+				1BCEC0AF25F6AF2000868498 /* RegRouter.swift */,
+				1BCEC0B025F6AF2000868498 /* RegModels.swift */,
+				1BCEC0B125F6AF2000868498 /* RegViewController.swift */,
+				1BCEC0B225F6AF2000868498 /* RegAssembly.swift */,
+				1BCEC0B325F6AF2000868498 /* RegInteractor.swift */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		1BCEC06525F67F0100868498 /* UpdateUser */ = {
+			isa = PBXGroup;
+			children = (
+				1BCEC0BE25F6B09A00868498 /* UserInfoPresenter.swift */,
+				1BCEC0BF25F6B09A00868498 /* UserInfoWorker.swift */,
+				1BCEC0C025F6B09A00868498 /* UserInfoRouter.swift */,
+				1BCEC0C125F6B09A00868498 /* UserInfoModels.swift */,
+				1BCEC0C225F6B09A00868498 /* UserInfoViewController.swift */,
+				1BCEC0C325F6B09A00868498 /* UserInfoAssembly.swift */,
+				1BCEC0C425F6B09A00868498 /* UserInfoInteractor.swift */,
+			);
+			path = UpdateUser;
 			sourceTree = "<group>";
 		};
 		1BEEBA2525DC4BAF00268F0A /* BaseURL */ = {
@@ -479,30 +606,59 @@
 				1BC7D1B125D7BAC200AF0BA2 /* RequestFactory.swift in Sources */,
 				1BC7D16F25D7B66700AF0BA2 /* AbstractErrorParser.swift in Sources */,
 				1BC7D1B925D8687400AF0BA2 /* LogoutResult.swift in Sources */,
+				1BCEC07425F6A48000868498 /* LogOutViewController.swift in Sources */,
 				1BC7D17925D7B6C000AF0BA2 /* DataRequest.swift in Sources */,
 				1BEEBA3F25DC54CC00268F0A /* ChangeUser.swift in Sources */,
+				1BCEC03E25F6649200868498 /* LoginViewController.swift in Sources */,
 				0A779D1A25E04BA900F19D0D /* GetCatalogRequestFactory.swift in Sources */,
+				1BCEC05125F665EC00868498 /* AppButton.swift in Sources */,
+				1BCEC0B625F6AF2000868498 /* RegRouter.swift in Sources */,
+				1BCEC0C925F6B09A00868498 /* UserInfoViewController.swift in Sources */,
 				1BC7D1A425D7BA6300AF0BA2 /* AuthRequestFactory.swift in Sources */,
 				1BC7D18725D7B7B100AF0BA2 /* RequestRouter.swift in Sources */,
 				1B9146CD25D5968A00A1D1D2 /* AppDelegate.swift in Sources */,
+				1BCEC05B25F6675100868498 /* UIView.swift in Sources */,
+				1BCEC05625F6660800868498 /* AppTextField.swift in Sources */,
+				1BCEC07125F6A48000868498 /* LogOutWorker.swift in Sources */,
+				1BCEC0E925F6B43A00868498 /* LoginWorker.swift in Sources */,
 				1BC7D19125D7B9DF00AF0BA2 /* LoginResult.swift in Sources */,
 				0A779D1F25E04C1B00F19D0D /* CatalogResult.swift in Sources */,
+				1BCEC07525F6A48000868498 /* LogOutAssembly.swift in Sources */,
+				1BCEC0B925F6AF2000868498 /* RegAssembly.swift in Sources */,
 				1BC7D1AC25D7BA8300AF0BA2 /* Auth.swift in Sources */,
 				1BC7D1BE25D868DE00AF0BA2 /* RegistrationResult.swift in Sources */,
+				1BCEC0C825F6B09A00868498 /* UserInfoModels.swift in Sources */,
 				1BC7D19625D7BA0F00AF0BA2 /* User.swift in Sources */,
+				1BCEC0C525F6B09A00868498 /* UserInfoPresenter.swift in Sources */,
+				1BCEC0BA25F6AF2000868498 /* RegInteractor.swift in Sources */,
 				1BEEBA3125DC52C700268F0A /* Registration.swift in Sources */,
 				1BEEBA4A25DC55C600268F0A /* Logout.swift in Sources */,
 				0A779D3025E04FCA00F19D0D /* FetchGoodByIdRequestFactory.swift in Sources */,
+				1BCEC0B825F6AF2000868498 /* RegViewController.swift in Sources */,
+				1BCEC0B525F6AF2000868498 /* RegWorker.swift in Sources */,
+				1BCEC04625F6649D00868498 /* LoginView.swift in Sources */,
 				1BC7D18C25D7B95B00AF0BA2 /* CustomDecodableSerializer.swift in Sources */,
+				1BCEC07625F6A48000868498 /* LogOutInteractor.swift in Sources */,
 				0A779D3525E04FE400F19D0D /* FetchGoodById.swift in Sources */,
+				1BCEC0CB25F6B09A00868498 /* UserInfoInteractor.swift in Sources */,
+				1BCEC0B725F6AF2000868498 /* RegModels.swift in Sources */,
+				1BCEC04B25F6656600868498 /* UIColor.swift in Sources */,
 				1BC7D1D125D86EB400AF0BA2 /* ChangeUserResult.swift in Sources */,
+				1BCEC07225F6A48000868498 /* LogOutRouter.swift in Sources */,
 				1BEEBA4425DC54DD00268F0A /* ChangeUserRequestFactory.swift in Sources */,
 				1B9146CF25D5968A00A1D1D2 /* SceneDelegate.swift in Sources */,
 				1BEEBA4F25DC55D700268F0A /* LogoutRequestFactory.swift in Sources */,
+				1BCEC07025F6A48000868498 /* LogOutPresenter.swift in Sources */,
 				0A779D3A25E0508300F19D0D /* GoodResult.swift in Sources */,
 				1BEEBA2725DC4BD400268F0A /* BaseURL.swift in Sources */,
+				1BCEC0C725F6B09A00868498 /* UserInfoRouter.swift in Sources */,
+				1BCEC0B425F6AF2000868498 /* RegPresenter.swift in Sources */,
 				1BEEBA3925DC52E100268F0A /* RegistrationRequestFactory.swift in Sources */,
+				1BCEC0C625F6B09A00868498 /* UserInfoWorker.swift in Sources */,
+				1BCEC07325F6A48000868498 /* LogOutModels.swift in Sources */,
 				1BC7D17425D7B69E00AF0BA2 /* ErrorParser.swift in Sources */,
+				1BCEC0CA25F6B09A00868498 /* UserInfoAssembly.swift in Sources */,
+				1BCEC0E425F6B20D00868498 /* LoginRouter.swift in Sources */,
 				0A779D1225E04B9000F19D0D /* GetCatalog.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
