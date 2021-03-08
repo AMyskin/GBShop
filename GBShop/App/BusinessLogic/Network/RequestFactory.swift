@@ -40,4 +40,12 @@ class RequestFactory {
         let errorParser = makeErrorParser()
         return ChangeUser(errorParser: errorParser, sessionManager: commonSession, queue: sessionQueue)
     }
+    func makeFetchCatalogFactory() -> GetCatalogRequestFactory {
+        let errorParser = makeErrorParser()
+        return GetCatalog(errorParser: errorParser, sessionManager: commonSession, queue: sessionQueue)
+    }
+    func makeFetchGoodFactory() -> FetchGoodByIdRequestFactory {
+        let errorParser = makeErrorParser()
+        return FetchGoodById(errorParser: errorParser, sessionManager: commonSession, queue: sessionQueue)
+    }
 }
