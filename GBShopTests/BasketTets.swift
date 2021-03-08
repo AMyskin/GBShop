@@ -6,49 +6,23 @@
 //
 
 import XCTest
- import Alamofire
- @testable import GBShop
+import Alamofire
+@testable import GBShop
 
- class ReviewTests: XCTestCase {
+class ReviewTests: XCTestCase {
 
-     var requestFactory: RequestFactory?
+    func testAddToBasket() throws {
 
-     override func setUpWithError() throws {
+        let requestFactory = RequestFactory()
 
-         requestFactory = RequestFactory()
-     }
-
-     override func tearDownWithError() throws {
-         requestFactory = nil
-     }
-
-     func testAddToBasket() throws {
-
-         let basket = try XCTUnwrap(requestFactory).makeAddToBasketFactory()
-
-         let basketExpectation = expectation(description: "Add basket")
-        basket.AddToBasket(idProduct: 123, quantity: 4) { (response) in
-             switch response.result {
-             case .success(let model):
-                 XCTAssertEqual(model.result, 1)
-                basketExpectation.fulfill()
-             case .failure(let err):
-                 XCTFail(err.localizedDescription)
-             }
-         }
-         waitForExpectations(timeout: 5)
-     }
-
-    func testAddToBasketFail() throws {
-
-        let basket = try XCTUnwrap(requestFactory).makeAddToBasketFactory()
+        let basket = requestFactory.makeAddToBasketFactory()
 
         let basketExpectation = expectation(description: "Add basket")
-       basket.AddToBasket(idProduct: 1234, quantity: 4) { (response) in
+        basket.AddToBasket(idProduct: 123, quantity: 4) { (response) in
             switch response.result {
             case .success(let model):
-                XCTAssertEqual(model.result, 0)
-               basketExpectation.fulfill()
+                XCTAssertEqual(model.result, 1)
+                basketExpectation.fulfill()
             case .failure(let err):
                 XCTFail(err.localizedDescription)
             }
@@ -56,33 +30,53 @@ import XCTest
         waitForExpectations(timeout: 5)
     }
 
-     func testRemoveFromBasket() throws {
+    func testAddToBasketFail() throws {
+        let requestFactory = RequestFactory()
 
-         let basket = try XCTUnwrap(requestFactory).makeRemoveFromBasketFactory()
+        let basket = requestFactory.makeAddToBasketFactory()
 
-         let basketExpectation = expectation(description: "RemoveFromBasket(")
-        basket.RemoveFromBasket(idProduct: 123) { (response) in
-             switch response.result {
-             case .success(let model):
-                 XCTAssertEqual(model.result, 1)
-                basketExpectation.fulfill()
-             case .failure(let err):
-                 XCTFail(err.localizedDescription)
-             }
-         }
-         waitForExpectations(timeout: 5)
-     }
-
-    func testRemoveFromBasketFail() throws {
-
-        let basket = try XCTUnwrap(requestFactory).makeRemoveFromBasketFactory()
-
-        let basketExpectation = expectation(description: "RemoveFromBasketFail")
-       basket.RemoveFromBasket(idProduct: 1234) { (response) in
+        let basketExpectation = expectation(description: "Add basket")
+        basket.AddToBasket(idProduct: 1234, quantity: 4) { (response) in
             switch response.result {
             case .success(let model):
                 XCTAssertEqual(model.result, 0)
-               basketExpectation.fulfill()
+                basketExpectation.fulfill()
+            case .failure(let err):
+                XCTFail(err.localizedDescription)
+            }
+        }
+        waitForExpectations(timeout: 5)
+    }
+
+    func testRemoveFromBasket() throws {
+        let requestFactory = RequestFactory()
+
+        let basket = requestFactory.makeRemoveFromBasketFactory()
+
+        let basketExpectation = expectation(description: "RemoveFromBasket(")
+        basket.RemoveFromBasket(idProduct: 123) { (response) in
+            switch response.result {
+            case .success(let model):
+                XCTAssertEqual(model.result, 1)
+                basketExpectation.fulfill()
+            case .failure(let err):
+                XCTFail(err.localizedDescription)
+            }
+        }
+        waitForExpectations(timeout: 5)
+    }
+
+    func testRemoveFromBasketFail() throws {
+        let requestFactory = RequestFactory()
+
+        let basket = requestFactory.makeRemoveFromBasketFactory()
+
+        let basketExpectation = expectation(description: "RemoveFromBasketFail")
+        basket.RemoveFromBasket(idProduct: 1234) { (response) in
+            switch response.result {
+            case .success(let model):
+                XCTAssertEqual(model.result, 0)
+                basketExpectation.fulfill()
             case .failure(let err):
                 XCTFail(err.localizedDescription)
             }
@@ -91,15 +85,16 @@ import XCTest
     }
 
     func testGetUserBasket() throws {
+        let requestFactory = RequestFactory()
 
-        let basket = try XCTUnwrap(requestFactory).makeGetUserBasketFactory()
+        let basket = requestFactory.makeGetUserBasketFactory()
 
         let basketExpectation = expectation(description: "GetUserBasket")
         basket.getBasket(idUser: 123) { (response) in
             switch response.result {
             case .success(let model):
                 XCTAssertEqual(model.result, 1)
-               basketExpectation.fulfill()
+                basketExpectation.fulfill()
             case .failure(let err):
                 XCTFail(err.localizedDescription)
             }
@@ -108,15 +103,16 @@ import XCTest
     }
 
     func testGetUserBasketFail() throws {
+        let requestFactory = RequestFactory()
 
-        let basket = try XCTUnwrap(requestFactory).makeGetUserBasketFactory()
+        let basket = requestFactory.makeGetUserBasketFactory()
 
         let basketExpectation = expectation(description: "GetUserBasket")
         basket.getBasket(idUser: 1235) { (response) in
             switch response.result {
             case .success(let model):
                 XCTAssertEqual(model.result, 0)
-               basketExpectation.fulfill()
+                basketExpectation.fulfill()
             case .failure(let err):
                 XCTFail(err.localizedDescription)
             }
@@ -124,5 +120,41 @@ import XCTest
         waitForExpectations(timeout: 5)
     }
 
- }
+    func testPayBasket() throws {
+        let requestFactory = RequestFactory()
+
+        let basket = requestFactory.makePayBasketFactory()
+
+        let basketExpectation = expectation(description: "PayBasket")
+        basket.payBasket(idBasket: 100) { (response) in
+            switch response.result {
+            case .success(let model):
+                XCTAssertEqual(model.result, 200)
+                basketExpectation.fulfill()
+            case .failure(let err):
+                XCTFail(err.localizedDescription)
+            }
+        }
+        waitForExpectations(timeout: 5)
+    }
+
+    func testPayBasketFail() throws {
+        let requestFactory = RequestFactory()
+
+        let basket = requestFactory.makePayBasketFactory()
+
+        let basketExpectation = expectation(description: "PayBasket")
+        basket.payBasket(idBasket: 123) { (response) in
+            switch response.result {
+            case .success(let model):
+                XCTAssertEqual(model.result, 404)
+                basketExpectation.fulfill()
+            case .failure(let err):
+                XCTFail(err.localizedDescription)
+            }
+        }
+        waitForExpectations(timeout: 5)
+    }
+
+}
 
