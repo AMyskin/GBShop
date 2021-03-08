@@ -89,5 +89,40 @@ import XCTest
         }
         waitForExpectations(timeout: 5)
     }
+
+    func testGetUserBasket() throws {
+
+        let basket = try XCTUnwrap(requestFactory).makeGetUserBasketFactory()
+
+        let basketExpectation = expectation(description: "GetUserBasket")
+        basket.getBasket(idUser: 123) { (response) in
+            switch response.result {
+            case .success(let model):
+                XCTAssertEqual(model.result, 1)
+               basketExpectation.fulfill()
+            case .failure(let err):
+                XCTFail(err.localizedDescription)
+            }
+        }
+        waitForExpectations(timeout: 5)
+    }
+
+    func testGetUserBasketFail() throws {
+
+        let basket = try XCTUnwrap(requestFactory).makeGetUserBasketFactory()
+
+        let basketExpectation = expectation(description: "GetUserBasket")
+        basket.getBasket(idUser: 1235) { (response) in
+            switch response.result {
+            case .success(let model):
+                XCTAssertEqual(model.result, 0)
+               basketExpectation.fulfill()
+            case .failure(let err):
+                XCTFail(err.localizedDescription)
+            }
+        }
+        waitForExpectations(timeout: 5)
+    }
+
  }
 

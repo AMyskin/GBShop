@@ -56,4 +56,8 @@ class RequestFactory {
         let errorParser = makeErrorParser()
         return RemoveFromBasket(errorParser: errorParser, sessionManager: commonSession, queue: sessionQueue)
     }
+    func makeGetUserBasketFactory() -> GetUserBasketRequestFactory {
+        let errorParser = makeErrorParser()
+        return GetUserBasket(errorParser: errorParser, sessionManager: commonSession, queue: sessionQueue)
+    }
 }
