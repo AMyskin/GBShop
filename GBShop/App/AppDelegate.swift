@@ -9,12 +9,85 @@ import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
-
+    
+    var window: UIWindow?
+    let requestFactory = RequestFactory()
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+//        let auth = requestFactory.makeAuthRequestFatory()
+//        auth.login(userName: "MocUser", password: "MocPassword") { response in
+//            switch response.result {
+//            case .success(let login):
+//                print(login)
+//            case .failure(let error):
+//                print(error.localizedDescription)
+//            }
+//        }
+//        let regFactory = requestFactory.makeRegistrationRequestFatory()
+//        regFactory.registration(
+//            userId: 11,
+//            userName: "Test",
+//            password: "Pass",
+//            email: "a@a.com",
+//            gender: "m",
+//            creditCard: "9872389-2424-234224-234",
+//            bio: "This is good! I think I will switch to another language") { response in
+//            switch response.result {
+//            case .success(let login):
+//                print(login)
+//            case .failure(let error):
+//                print(error.localizedDescription)
+//            }
+//        }
+//        let changeFactory = requestFactory.makeChangeUserRequestFactory()
+//        
+//        changeFactory.changeUserData(
+//            userId: 12,
+//            userName: "NO",
+//            password: "Data",
+//            email: "a@a.com",
+//            gender: "m",
+//            creditCard: "9872389-2424-234224-234",
+//            bio: "This is good! I think I will switch to another language") { response in
+//            switch response.result {
+//            case .success(let login):
+//                print(login)
+//            case .failure(let error):
+//                print(error.localizedDescription)
+//            }
+//        }
+//        let logoutFactory = requestFactory.makeLogoutRequestFatory()
+//        logoutFactory.logout(userId: 1) { response in
+//            switch response.result {
+//            case .success(let login):
+//                print(login)
+//            case .failure(let error):
+//                print(error.localizedDescription)
+//            }
+//        }
+//        
+//        let catalog = requestFactory.makeFetchCatalogFactory()
+//        catalog.getCatalog(pageNumber: 1, idCategory: 1) { response in
+//            switch response.result {
+//            case .success(let login):
+//                print(login)
+//            case .failure(let error):
+//                print(error.localizedDescription)
+//            }
+//        }
+        
+//        let good = requestFactory.makeFetchGoodFactory()
+//        good.fetchGoodById(idProduct: 1) { response in
+//            switch response.result {
+//            case .success(let login):
+//                print(login)
+//            case .failure(let error):
+//                print(error.localizedDescription)
+//            }
+//        }
+        
         return true
+        
     }
 
     // MARK: UISceneSession Lifecycle
