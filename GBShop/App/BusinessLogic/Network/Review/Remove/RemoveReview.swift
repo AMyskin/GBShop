@@ -1,14 +1,14 @@
 //
-//  FetchGoodById.swift
+//  RemoveReview.swift
 //  GBShop
 //
-//  Created by Alexander Myskin on 19.02.2021.
+//  Created by Alexander Myskin on 08.03.2021.
 //
 
 import Foundation
 import Alamofire
 
-class FetchGoodById: AbstractRequestFactory {
+class RemoveReview: AbstractRequestFactory {
     let errorParser: AbstractErrorParser
     let sessionManager: Session
     let queue: DispatchQueue
@@ -25,28 +25,27 @@ class FetchGoodById: AbstractRequestFactory {
     }
 }
 
-extension FetchGoodById: FetchGoodByIdRequestFactory {
-    func fetchGoodById(idProduct: Int,
-                       completionHandler: @escaping (AFDataResponse<GoodResult>) -> Void) {
-        let requestModel = Good(baseUrl: baseUrl, idProduct: idProduct)
+extension RemoveReview: RemoveReviewRequestFactory {
+    func removeReview(idComment: Int,
+                      completionHandler: @escaping (AFDataResponse<ReviewResult>) -> Void) {
+        let requestModel = Review(baseUrl: baseUrl, idcomment: idComment)
         
         self.request(request: requestModel, completionHandler: completionHandler)
     }
-   
+    
 }
 
-extension FetchGoodById {
-    struct Good: RequestRouter {
+extension RemoveReview {
+    struct Review: RequestRouter {
         let baseUrl: URL
         let method: HTTPMethod = .post
-        let path: String = "getGoodById.json"
+        let path: String = "approveReview"
         
-        let idProduct: Int
+        let idcomment: Int
         var parameters: Parameters? {
             return [
-                "id_product": idProduct
+                "id_comment": idcomment
             ]
         }
     }
 }
-

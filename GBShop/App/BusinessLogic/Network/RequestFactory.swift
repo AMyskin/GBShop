@@ -48,4 +48,16 @@ class RequestFactory {
         let errorParser = makeErrorParser()
         return FetchGoodById(errorParser: errorParser, sessionManager: commonSession, queue: sessionQueue)
     }
+    func makeAddRevuewFactory() -> AddReviewRequestFactory {
+        let errorParser = makeErrorParser()
+        return AddReview(errorParser: errorParser, sessionManager: commonSession, queue: sessionQueue)
+    }
+    func makeApproveReviewFactory() -> ApproveReviewRequestFactory {
+        let errorParser = makeErrorParser()
+        return ApproveReview(errorParser: errorParser, sessionManager: commonSession, queue: sessionQueue)
+    }
+    func makeRemoveReviewFactory() -> RemoveReviewRequestFactory {
+        let errorParser = makeErrorParser()
+        return RemoveReview(errorParser: errorParser, sessionManager: commonSession, queue: sessionQueue)
+    }
 }
