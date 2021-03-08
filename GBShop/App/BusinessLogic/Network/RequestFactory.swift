@@ -48,4 +48,12 @@ class RequestFactory {
         let errorParser = makeErrorParser()
         return FetchGoodById(errorParser: errorParser, sessionManager: commonSession, queue: sessionQueue)
     }
+    func makeAddToBasketFactory() -> AddToBasketRequestFactory {
+        let errorParser = makeErrorParser()
+        return AddToBasket(errorParser: errorParser, sessionManager: commonSession, queue: sessionQueue)
+    }
+    func makeRemoveFromBasketFactory() -> RemoveFromBasketRequestFactory {
+        let errorParser = makeErrorParser()
+        return RemoveFromBasket(errorParser: errorParser, sessionManager: commonSession, queue: sessionQueue)
+    }
 }
