@@ -2,20 +2,22 @@
 //  LoginViewController.swift
 //  GBShop
 //
-//  Created by Alexander Myskin on 08.03.2021.
+//  Created by Alexander Myskin on 11.03.2021.
+//  Copyright (c) 2021 ___ORGANIZATIONNAME___. All rights reserved.
 //
-
 import UIKit
 
 protocol LoginDisplayLogic: AnyObject {
-    func displaySomething()
+    func displayUser(viewModel: Login.ViewModel)
+    func displayError()
 }
 
-class LoginViewController: UIViewController, LoginDisplayLogic {
+final class LoginViewController: UIViewController, LoginDisplayLogic {
+    var interactor: LoginBusinessLogic?
+    var router: LoginRoutingLogic?
 
     var contentView = LoginView()
-    private lazy var router = LoginRouter(viewController: self)
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -42,16 +44,29 @@ class LoginViewController: UIViewController, LoginDisplayLogic {
         view.addSubview(contentView.prepareForAutoLayout())
         contentView.pinEdgesToSuperviewEdges()
         contentView.callbackMainButtonAction = { [weak self] in
-            self?.router.routeToUserInfo()
+            if let login = self?.contentView.emailTextField.textField.text,
+               let password = self?.contentView.passwordTextField.textField.text {
+                self?.interactor?.fetchUser(login: login, password: password)
+            }
         }
 
         contentView.callbackRegButtonAction = { [weak self] in
-            self?.router.routeToReg()
+            self?.router?.routeToReg()
         }
     }
 
-    func displaySomething() {
-        
+    func displayUser(viewModel: Login.ViewModel) {
+        router?.routeToUserInfo()
     }
 
+    func displayError() {
+        let alert = UIAlertController(title: "Ошибка", message: "Пользователь не найден\nили пароль не верен. \n Пароль \"password\"", preferredStyle: .alert)
+
+        let ok = UIAlertAction(title: "OK", style: .default, handler: { action in
+        })
+        alert.addAction(ok)
+        DispatchQueue.main.async(execute: {
+            self.present(alert, animated: true)
+        })
+    }
 }
