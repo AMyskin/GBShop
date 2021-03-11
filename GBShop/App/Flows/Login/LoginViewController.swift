@@ -21,9 +21,7 @@ final class LoginViewController: UIViewController, LoginDisplayLogic {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-
         view.addTapGestureToHideKeyboard()
-
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -44,7 +42,7 @@ final class LoginViewController: UIViewController, LoginDisplayLogic {
         view.addSubview(contentView.prepareForAutoLayout())
         contentView.pinEdgesToSuperviewEdges()
         contentView.callbackMainButtonAction = { [weak self] in
-            if let login = self?.contentView.emailTextField.textField.text,
+            if let login = self?.contentView.userTextField.textField.text,
                let password = self?.contentView.passwordTextField.textField.text {
                 self?.interactor?.fetchUser(login: login, password: password)
             }

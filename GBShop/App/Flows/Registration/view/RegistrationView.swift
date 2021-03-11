@@ -1,22 +1,28 @@
 //
-//  LoginView.swift
+//  RegistrationView.swift
 //  GBShop
 //
-//  Created by Alexander Myskin on 08.03.2021.
+//  Created by Alexander Myskin on 11.03.2021.
 //
 
 import UIKit
 
-final class LoginView: UIView {
+final class RegistrationView: UIView {
 
     // MARK: - Properties
     public var callbackMainButtonAction: (() -> Void)?
-    public var callbackRegButtonAction: (() -> Void)?
+
+    /**             userName: "Test",
+    password: "Pass",
+    email: "a@a.com",
+    gender: "m",
+    creditCard: "9872389-2424-234224-234",
+    bio: "This is good! I think I will switch to another language") **/
 
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 20, weight: .black)
-        label.text = "Войдите в свой аккаунт"
+        label.text = "Регистрация"
         label.textAlignment = .center
         label.textColor = .headerTextColor
         return label
@@ -34,36 +40,41 @@ final class LoginView: UIView {
         return textField
     }()
 
-    lazy var loginButton: AppButton = {
-        let button = AppButton()
-        button.setTitle("Вход", for: UIControl.State())
-        button.addTarget(self, action: #selector(tappedButton), for: .touchUpInside)
-        return button
+    lazy var emailTextField: AppTextField = {
+        let textField = AppTextField(title: "Почта")
+        textField.textField.autocapitalizationType = .none
+        return textField
     }()
 
-    lazy var registrationButton: AppButton = {
+    lazy var genderTextField: AppTextField = {
+        let textField = AppTextField(title: "Пол")
+        textField.textField.autocapitalizationType = .none
+        return textField
+    }()
+
+    lazy var cardTextField: AppTextField = {
+        let textField = AppTextField(title: "Карта")
+        textField.textField.autocapitalizationType = .none
+        return textField
+    }()
+
+    lazy var bioTextField: AppTextField = {
+        let textField = AppTextField(title: "О себе")
+        textField.textField.autocapitalizationType = .none
+        return textField
+    }()
+
+    lazy var loginButton: AppButton = {
         let button = AppButton()
-        button.setTitle("Регистрация", for: UIControl.State())
-        button.addTarget(self, action: #selector(tappedButtonReg), for: .touchUpInside)
+        button.setTitle("Зарегистрировать", for: UIControl.State())
+        button.addTarget(self, action: #selector(tappedButton), for: .touchUpInside)
         return button
     }()
 
     @objc func tappedButton() {
         callbackMainButtonAction?()
     }
-    @objc func tappedButtonReg() {
-        callbackRegButtonAction?()
-    }
 
-    lazy var passwordlLabel: UILabel = {
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 14, weight: .ultraLight)
-        label.numberOfLines = 0
-        label.text = "Пароль Password"
-        label.textAlignment = .center
-        label.textColor = .mainTextColor
-        return label
-    }()
 
 
     lazy var activityIndicationView: UIActivityIndicatorView = {
@@ -86,7 +97,15 @@ final class LoginView: UIView {
     }
 
     private func addSubviews() {
-        [titleLabel, userTextField, passwordTextField, passwordlLabel, loginButton, registrationButton, activityIndicationView]
+        [titleLabel,
+         userTextField,
+         passwordTextField,
+         emailTextField,
+         genderTextField,
+         cardTextField,
+         bioTextField,
+         loginButton,
+         activityIndicationView]
             .forEach {
                 addSubview($0)
                 $0.translatesAutoresizingMaskIntoConstraints = false
@@ -102,7 +121,7 @@ final class LoginView: UIView {
         ]
 
         let userTextFieldConstraints = [
-            userTextField.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 100),
+            userTextField.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 50),
             userTextField.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             userTextField.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - 20),
             userTextField.heightAnchor.constraint(equalToConstant: 50)
@@ -115,11 +134,32 @@ final class LoginView: UIView {
             passwordTextField.heightAnchor.constraint(equalToConstant: 50)
         ]
 
-        let passwordlLabelConstraints = [
-            passwordlLabel.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor),
-            passwordlLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            passwordlLabel.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - 20),
-            passwordlLabel.heightAnchor.constraint(equalToConstant: 41)
+        let emailTextFieldConstraints = [
+            emailTextField.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 18),
+            emailTextField.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            emailTextField.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - 20),
+            emailTextField.heightAnchor.constraint(equalToConstant: 50)
+        ]
+
+        let genderTextFieldConstraints = [
+            genderTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 18),
+            genderTextField.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            genderTextField.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - 20),
+            genderTextField.heightAnchor.constraint(equalToConstant: 50)
+        ]
+
+        let cardTextFieldConstraints = [
+            cardTextField.topAnchor.constraint(equalTo: genderTextField.bottomAnchor, constant: 18),
+            cardTextField.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            cardTextField.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - 20),
+            cardTextField.heightAnchor.constraint(equalToConstant: 50)
+        ]
+
+        let bioTextFieldConstraints = [
+            bioTextField.topAnchor.constraint(equalTo: cardTextField.bottomAnchor, constant: 18),
+            bioTextField.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            bioTextField.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - 20),
+            bioTextField.heightAnchor.constraint(equalToConstant: 50)
         ]
 
         let loginButtonConstraints = [
@@ -128,14 +168,6 @@ final class LoginView: UIView {
             loginButton.heightAnchor.constraint(equalToConstant: 50),
             loginButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -30),
         ]
-
-        let registrationButtonConstraints = [
-            registrationButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            registrationButton.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - 40),
-            registrationButton.heightAnchor.constraint(equalToConstant: 50),
-            registrationButton.bottomAnchor.constraint(equalTo: loginButton.topAnchor, constant: -16),
-        ]
-
 
         let activityIndicatorViewConstraints = [
             activityIndicationView.centerXAnchor.constraint(equalTo: centerXAnchor),
@@ -147,9 +179,11 @@ final class LoginView: UIView {
         [titleLabelConstraints,
          userTextFieldConstraints,
          passwordTextFieldConstraints,
-         passwordlLabelConstraints,
+         emailTextFieldConstraints,
+         genderTextFieldConstraints,
+         cardTextFieldConstraints,
+         bioTextFieldConstraints,
          loginButtonConstraints,
-         registrationButtonConstraints,
          activityIndicatorViewConstraints]
             .forEach(NSLayoutConstraint.activate(_:))
     }

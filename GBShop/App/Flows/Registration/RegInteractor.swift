@@ -9,7 +9,7 @@
 import UIKit
 
 protocol RegBusinessLogic {
-    func doSomething(request: Reg.Something.Request)
+    func doSomething(request: Reg.Request)
 }
 
 protocol RegDataStore {
@@ -26,11 +26,11 @@ final class RegInteractor: RegBusinessLogic, RegDataStore {
     
     // MARK: Do something
     
-    func doSomething(request: Reg.Something.Request) {
+    func doSomething(request: Reg.Request) {
         worker = RegWorker()
-        worker?.doSomeWork()
+       // worker?()
         
-        let response = Reg.Something.Response()
+        let response = Reg.Response()
         presenter?.presentSomething(response: response)
     }
 }

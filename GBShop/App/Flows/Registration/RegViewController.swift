@@ -8,17 +8,20 @@
 import UIKit
 
 protocol RegDisplayLogic: AnyObject {
-    func displaySomething(viewModel: Reg.Something.ViewModel)
+    func displaySomething(viewModel: Reg.ViewModel)
 }
 
 final class RegViewController: UIViewController, RegDisplayLogic {
     var interactor: RegBusinessLogic?
-    var router: (NSObjectProtocol & RegRoutingLogic )?
+    var router: RegRoutingLogic?
+
+    var contentView = RegistrationView()
     
     // MARK: View lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.addTapGestureToHideKeyboard()
         setup()
         doSomething()
     }
@@ -27,9 +30,14 @@ final class RegViewController: UIViewController, RegDisplayLogic {
     // MARK: Setup
     
     private func setup() {
+        view.backgroundColor = .white
         self.navigationController?.isNavigationBarHidden = false
         navigationItem.title = "Регистрация"
-        view.backgroundColor = .blue
+        view.addSubview(contentView.prepareForAutoLayout())
+        contentView.pinEdgesToSuperviewEdges()
+        contentView.callbackMainButtonAction = {
+            // route to info
+        }
     }
     
 
@@ -39,11 +47,11 @@ final class RegViewController: UIViewController, RegDisplayLogic {
     //@IBOutlet weak var nameTextField: UITextField!
     
     func doSomething() {
-        let request = Reg.Something.Request()
-        interactor?.doSomething(request: request)
+//        let request = Reg.Request()
+//        interactor?.doSomething(request: request)
     }
     
-    func displaySomething(viewModel: Reg.Something.ViewModel) {
+    func displaySomething(viewModel: Reg.ViewModel) {
         //nameTextField.text = viewModel.name
     }
 }

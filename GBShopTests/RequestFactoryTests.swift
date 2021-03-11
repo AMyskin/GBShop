@@ -44,7 +44,7 @@ class RequestFactoryTests: XCTestCase {
         let logout = try XCTUnwrap(requestFactory).makeLogoutRequestFatory()
         
         let signedOut = expectation(description: "log out")
-        logout.logout(userId: 1) { (response) in
+        logout.logout(userId: 123) { (response) in
             switch response.result {
             case .success(let login):
                 XCTAssertEqual(login.result, 1)
@@ -62,7 +62,7 @@ class RequestFactoryTests: XCTestCase {
         
         let reg = expectation(description: "registration")
         registration.registration(
-            userId: 11,
+            userId: 123,
             userName: "Test",
             password: "Pass",
             email: "a@a.com",
@@ -88,7 +88,7 @@ class RequestFactoryTests: XCTestCase {
         
         let changeUser = expectation(description: "Update")
         change.changeUserData(
-            userId: 11,
+            userId: 123,
             userName: "Test",
             password: "Pass",
             email: "a@a.com",

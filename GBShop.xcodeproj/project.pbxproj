@@ -20,6 +20,7 @@
 		1B2205E225FA8DDF0065F598 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2205DB25FA8DDF0065F598 /* LoginViewController.swift */; };
 		1B2205E325FA8DDF0065F598 /* LoginAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2205DC25FA8DDF0065F598 /* LoginAssembly.swift */; };
 		1B2205E425FA8DDF0065F598 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2205DD25FA8DDF0065F598 /* LoginInteractor.swift */; };
+		1B22060225FAA67C0065F598 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B22060125FAA67C0065F598 /* RegistrationView.swift */; };
 		1B9146CD25D5968A00A1D1D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9146CC25D5968A00A1D1D2 /* AppDelegate.swift */; };
 		1B9146CF25D5968A00A1D1D2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9146CE25D5968A00A1D1D2 /* SceneDelegate.swift */; };
 		1B9146D625D5968B00A1D1D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B9146D525D5968B00A1D1D2 /* Assets.xcassets */; };
@@ -107,6 +108,7 @@
 		1B2205DB25FA8DDF0065F598 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1B2205DC25FA8DDF0065F598 /* LoginAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAssembly.swift; sourceTree = "<group>"; };
 		1B2205DD25FA8DDF0065F598 /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
+		1B22060125FAA67C0065F598 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		1B9146C925D5968A00A1D1D2 /* GBShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GBShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B9146CC25D5968A00A1D1D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1B9146CE25D5968A00A1D1D2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -218,6 +220,14 @@
 				1BCEC04525F6649D00868498 /* LoginView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		1B22060025FAA65B0065F598 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				1B22060125FAA67C0065F598 /* RegistrationView.swift */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 		1B9146C025D5968A00A1D1D2 = {
@@ -419,6 +429,7 @@
 		1BCEC06425F67EF200868498 /* Registration */ = {
 			isa = PBXGroup;
 			children = (
+				1B22060025FAA65B0065F598 /* view */,
 				1BCEC0AD25F6AF2000868498 /* RegPresenter.swift */,
 				1BCEC0AE25F6AF2000868498 /* RegWorker.swift */,
 				1BCEC0AF25F6AF2000868498 /* RegRouter.swift */,
@@ -650,6 +661,7 @@
 				1BC7D1AC25D7BA8300AF0BA2 /* Auth.swift in Sources */,
 				1BC7D1BE25D868DE00AF0BA2 /* RegistrationResult.swift in Sources */,
 				1BCEC0C825F6B09A00868498 /* UserInfoModels.swift in Sources */,
+				1B22060225FAA67C0065F598 /* RegistrationView.swift in Sources */,
 				1BC7D19625D7BA0F00AF0BA2 /* User.swift in Sources */,
 				1BCEC0C525F6B09A00868498 /* UserInfoPresenter.swift in Sources */,
 				1BCEC0BA25F6AF2000868498 /* RegInteractor.swift in Sources */,

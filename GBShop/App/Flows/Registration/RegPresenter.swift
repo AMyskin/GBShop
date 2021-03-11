@@ -9,7 +9,7 @@
 import UIKit
 
 protocol RegPresentationLogic {
-    func presentSomething(response: Reg.Something.Response)
+    func presentSomething(response: Reg.Response)
 }
 
 class RegPresenter: RegPresentationLogic {
@@ -21,8 +21,8 @@ class RegPresenter: RegPresentationLogic {
     
     // MARK: Do something
     
-    func presentSomething(response: Reg.Something.Response) {
-        let viewModel = Reg.Something.ViewModel()
+    func presentSomething(response: Reg.Response) {
+        let viewModel = Reg.ViewModel()
         viewController?.displaySomething(viewModel: viewModel)
     }
 }

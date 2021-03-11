@@ -10,13 +10,23 @@ import UIKit
 
 enum Reg {
     // MARK: Use cases
-    
-    enum Something {
-        struct Request {
-        }
-        struct Response {
-        }
-        struct ViewModel {
-        }
+
+    struct Request {
+        let user: RegUser
     }
+    struct Response {
+    }
+    struct ViewModel {
+    }
+
+    struct RegUser {
+        let idUser: Int
+        let login: String
+        let password: String
+        let email: String
+        let gender: String
+        let creditCard: String
+        let bio: String
+    }
+
 }
