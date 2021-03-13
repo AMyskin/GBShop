@@ -23,7 +23,7 @@ final class LoginRouter:  LoginRoutingLogic {
     }
 
     func routeToUserInfo() {
-        let userAssembly = UserInfoAssembly.assembly()
+        let userAssembly = UserInfoAssembly.assembly(params: nil)
         self.viewController?.navigationController?.pushViewController(userAssembly, animated: true)
     }
 

@@ -15,14 +15,25 @@ protocol UserInfoDisplayLogic: AnyObject {
 final class UserInfoViewController: UIViewController, UserInfoDisplayLogic {
     var interactor: UserInfoBusinessLogic?
     var router: (NSObjectProtocol & UserInfoRoutingLogic )?
+    var params: Reg.RegUser?
 
     var contentView = UserInfoView()
 
     // MARK: View lifecycle
 
+    init(params: Reg.RegUser?) {
+        super.init(nibName: nil, bundle: nil)
+        self.params = params
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        self.fetchData()
     }
 
     // MARK: Setup
@@ -47,7 +58,16 @@ final class UserInfoViewController: UIViewController, UserInfoDisplayLogic {
 
     }
 
-    
+    // MARK: fetchData
+    private func fetchData() {
+        contentView.userTextField.textField.text = params?.login
+        contentView.passwordTextField.textField.text = params?.password
+        contentView.emailTextField.textField.text = params?.email
+        contentView.genderTextField.textField.text = params?.gender
+        contentView.cardTextField.textField.text = params?.creditCard
+        contentView.bioTextField.textField.text = params?.bio
+    }
+
     func displayUser() {
         let alert = UIAlertController(title: "Успешно", message: "Обновление успешно", preferredStyle: .alert)
 

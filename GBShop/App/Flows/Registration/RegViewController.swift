@@ -15,6 +15,7 @@ protocol RegDisplayLogic: AnyObject {
 final class RegViewController: UIViewController, RegDisplayLogic {
     var interactor: RegBusinessLogic?
     var router: RegRoutingLogic?
+    var regUser: Reg.RegUser?
 
     var contentView = RegistrationView()
     
@@ -44,6 +45,7 @@ final class RegViewController: UIViewController, RegDisplayLogic {
                 gender: self?.contentView.genderTextField.textField.text ?? "",
                 creditCard: self?.contentView.cardTextField.textField.text ?? "",
                 bio: self?.contentView.bioTextField.textField.text ?? "")
+            self?.regUser = regUser
             self?.interactor?.registration(user: regUser)
         }
     }
@@ -51,8 +53,8 @@ final class RegViewController: UIViewController, RegDisplayLogic {
     func displayUser() {
         let alert = UIAlertController(title: "Успех", message: "Регистрация успешна", preferredStyle: .alert)
 
-        let ok = UIAlertAction(title: "OK", style: .default, handler: { action in
-            self.router?.routeToUserInfo()
+        let ok = UIAlertAction(title: "OK", style: .default, handler: { [weak self] action in
+            self?.router?.routeToUserInfo(params: self?.regUser )
         })
         alert.addAction(ok)
         DispatchQueue.main.async{ [weak self] in

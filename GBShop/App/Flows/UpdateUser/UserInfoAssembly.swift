@@ -9,8 +9,8 @@
 import Foundation
 
 final class UserInfoAssembly {
-    static func assembly() -> UserInfoViewController {
-        let viewController = UserInfoViewController()
+    static func assembly(params: Reg.RegUser?) -> UserInfoViewController {
+        let viewController = UserInfoViewController(params: params)
         let presenter = UserInfoPresenter(viewController: viewController)
         let router = UserInfoRouter(viewController: viewController)
         let worker = UserInfoWorker()

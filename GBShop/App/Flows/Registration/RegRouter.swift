@@ -8,12 +8,12 @@
 
 import UIKit
 
-@objc protocol RegRoutingLogic {
-    func routeToUserInfo()
+protocol RegRoutingLogic {
+    func routeToUserInfo(params: Reg.RegUser?)
 }
 
 
-final class RegRouter: NSObject, RegRoutingLogic {
+final class RegRouter: RegRoutingLogic {
 
     weak var viewController: RegViewController?
 
@@ -21,8 +21,8 @@ final class RegRouter: NSObject, RegRoutingLogic {
         self.viewController = viewController
     }
 
-    func routeToUserInfo() {
-        let userAssembly = UserInfoAssembly.assembly()
+    func routeToUserInfo(params: Reg.RegUser?) {
+        let userAssembly = UserInfoAssembly.assembly(params: params)
         self.viewController?.navigationController?.pushViewController(userAssembly, animated: true)
     }
 }
