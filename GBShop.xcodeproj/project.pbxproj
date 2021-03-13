@@ -311,9 +311,9 @@
 		1B91470325D597E100A1D1D2 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				1BCEC04F25F665DA00868498 /* Common */,
 				1BCEC06525F67F0100868498 /* UpdateUser */,
 				1BCEC06425F67EF200868498 /* Registration */,
-				1BCEC04F25F665DA00868498 /* Common */,
 				1BCEC03B25F6644400868498 /* Login */,
 			);
 			path = Flows;
