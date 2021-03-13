@@ -9,14 +9,10 @@
 import UIKit
 
 protocol UserInfoBusinessLogic {
-    func doSomething(request: UserInfo.Something.Request)
+    func updateUser(user: UserInfo.User)
 }
 
-protocol UserInfoDataStore {
-    //var name: String { get set }
-}
-
-final class UserInfoInteractor: UserInfoBusinessLogic, UserInfoDataStore {
+final class UserInfoInteractor: UserInfoBusinessLogic {
     var presenter: UserInfoPresentationLogic?
     var worker: UserInfoWorker?
 
@@ -24,15 +20,18 @@ final class UserInfoInteractor: UserInfoBusinessLogic, UserInfoDataStore {
         self.presenter = presenter
         self.worker = worker
     }
-    //var name: String = ""
-    
-    // MARK: Do something
-    
-    func doSomething(request: UserInfo.Something.Request) {
-        worker = UserInfoWorker()
-        worker?.doSomeWork()
-        
-        let response = UserInfo.Something.Response()
-        presenter?.presentSomething(response: response)
+
+    // MARK: RegBusinessLogic
+    func updateUser(user: UserInfo.User) {
+
+        worker?.updateUserInfo(user: user) { (response) in
+
+            switch response.result{
+            case 1:
+                self.presenter?.presentUser()
+            default:
+                self.presenter?.presentError()
+            }
+        }
     }
 }

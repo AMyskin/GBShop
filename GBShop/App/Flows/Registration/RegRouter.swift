@@ -9,15 +9,20 @@
 import UIKit
 
 @objc protocol RegRoutingLogic {
-    //func routeToSomewhere(segue: UIStoryboardSegue?)
+    func routeToUserInfo()
 }
 
 
 final class RegRouter: NSObject, RegRoutingLogic {
 
-    weak var viewController: RegDisplayLogic?
+    weak var viewController: RegViewController?
 
-    init(viewController: RegDisplayLogic) {
+    init(viewController: RegViewController) {
         self.viewController = viewController
+    }
+
+    func routeToUserInfo() {
+        let userAssembly = UserInfoAssembly.assembly()
+        self.viewController?.navigationController?.pushViewController(userAssembly, animated: true)
     }
 }

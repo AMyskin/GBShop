@@ -9,14 +9,10 @@
 import UIKit
 
 protocol RegBusinessLogic {
-    func doSomething(request: Reg.Request)
+    func  registration(user: Reg.RegUser)
 }
 
-protocol RegDataStore {
-    //var name: String { get set }
-}
-
-final class RegInteractor: RegBusinessLogic, RegDataStore {
+final class RegInteractor: RegBusinessLogic {
     var presenter: RegPresentationLogic?
     var worker: RegWorker?
     init(presenter: RegPresentationLogic, worker: RegWorker) {
@@ -24,13 +20,17 @@ final class RegInteractor: RegBusinessLogic, RegDataStore {
         self.worker = worker
     }
     
-    // MARK: Do something
-    
-    func doSomething(request: Reg.Request) {
-        worker = RegWorker()
-       // worker?()
-        
-        let response = Reg.Response()
-        presenter?.presentSomething(response: response)
+    // MARK: RegBusinessLogic
+    func  registration(user: Reg.RegUser) {
+
+        worker?.regUser(user: user) { (response) in
+
+            switch response.result{
+            case 1:
+                self.presenter?.presentUser()
+            default:
+                self.presenter?.presentError()
+            }
+        }
     }
 }

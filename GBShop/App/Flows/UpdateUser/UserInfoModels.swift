@@ -11,12 +11,20 @@ import UIKit
 enum UserInfo {
     // MARK: Use cases
     
-    enum Something {
-        struct Request {
-        }
-        struct Response {
-        }
-        struct ViewModel {
-        }
+
+    struct Request {
+    }
+    struct Response {
+    }
+    struct ViewModel {
+    }
+    struct User {
+        let idUser: Int
+        let login: String
+        let password: String
+        let email: String
+        let gender: String
+        let creditCard: String
+        let bio: String
     }
 }

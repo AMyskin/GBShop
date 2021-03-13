@@ -8,7 +8,8 @@
 import UIKit
 
 protocol RegDisplayLogic: AnyObject {
-    func displaySomething(viewModel: Reg.ViewModel)
+    func displayUser()
+    func displayError()
 }
 
 final class RegViewController: UIViewController, RegDisplayLogic {
@@ -23,7 +24,6 @@ final class RegViewController: UIViewController, RegDisplayLogic {
         super.viewDidLoad()
         view.addTapGestureToHideKeyboard()
         setup()
-        doSomething()
     }
 
     
@@ -35,23 +35,39 @@ final class RegViewController: UIViewController, RegDisplayLogic {
         navigationItem.title = "Регистрация"
         view.addSubview(contentView.prepareForAutoLayout())
         contentView.pinEdgesToSuperviewEdges()
-        contentView.callbackMainButtonAction = {
-            // route to info
+        contentView.callbackMainButtonAction = { [weak self] in
+            let regUser = Reg.RegUser(
+                idUser: 222,
+                login: self?.contentView.userTextField.textField.text ?? "",
+                password: self?.contentView.passwordTextField.textField.text ?? "",
+                email: self?.contentView.emailTextField.textField.text ?? "",
+                gender: self?.contentView.genderTextField.textField.text ?? "",
+                creditCard: self?.contentView.cardTextField.textField.text ?? "",
+                bio: self?.contentView.bioTextField.textField.text ?? "")
+            self?.interactor?.registration(user: regUser)
         }
     }
     
+    func displayUser() {
+        let alert = UIAlertController(title: "Успех", message: "Регистрация успешна", preferredStyle: .alert)
 
-    
-    // MARK: Do something
-    
-    //@IBOutlet weak var nameTextField: UITextField!
-    
-    func doSomething() {
-//        let request = Reg.Request()
-//        interactor?.doSomething(request: request)
+        let ok = UIAlertAction(title: "OK", style: .default, handler: { action in
+            self.router?.routeToUserInfo()
+        })
+        alert.addAction(ok)
+        DispatchQueue.main.async{ [weak self] in
+            self?.present(alert, animated: true)
+        }
     }
-    
-    func displaySomething(viewModel: Reg.ViewModel) {
-        //nameTextField.text = viewModel.name
+
+    func displayError() {
+        let alert = UIAlertController(title: "Ошибка", message: "Ошибка регистрации/nпопробуйте позднее.", preferredStyle: .alert)
+
+        let ok = UIAlertAction(title: "OK", style: .default, handler: { action in
+        })
+        alert.addAction(ok)
+        DispatchQueue.main.async{ [weak self] in
+            self?.present(alert, animated: true)
+        }
     }
 }

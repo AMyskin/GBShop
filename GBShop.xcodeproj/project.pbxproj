@@ -27,6 +27,7 @@
 		1B9146D925D5968B00A1D1D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B9146D725D5968B00A1D1D2 /* LaunchScreen.storyboard */; };
 		1B9146E425D5968B00A1D1D2 /* GBShopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9146E325D5968B00A1D1D2 /* GBShopTests.swift */; };
 		1B9146EF25D5968B00A1D1D2 /* GBShopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9146EE25D5968B00A1D1D2 /* GBShopUITests.swift */; };
+		1BBE61A225FD3AD70021D2A9 /* UserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBE61A125FD3AD70021D2A9 /* UserInfoView.swift */; };
 		1BC7D16F25D7B66700AF0BA2 /* AbstractErrorParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC7D16E25D7B66700AF0BA2 /* AbstractErrorParser.swift */; };
 		1BC7D17425D7B69E00AF0BA2 /* ErrorParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC7D17325D7B69E00AF0BA2 /* ErrorParser.swift */; };
 		1BC7D17925D7B6C000AF0BA2 /* DataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC7D17825D7B6C000AF0BA2 /* DataRequest.swift */; };
@@ -46,13 +47,6 @@
 		1BCEC05125F665EC00868498 /* AppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCEC05025F665EC00868498 /* AppButton.swift */; };
 		1BCEC05625F6660800868498 /* AppTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCEC05525F6660800868498 /* AppTextField.swift */; };
 		1BCEC05B25F6675100868498 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCEC05A25F6675100868498 /* UIView.swift */; };
-		1BCEC07025F6A48000868498 /* LogOutPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCEC06925F6A48000868498 /* LogOutPresenter.swift */; };
-		1BCEC07125F6A48000868498 /* LogOutWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCEC06A25F6A48000868498 /* LogOutWorker.swift */; };
-		1BCEC07225F6A48000868498 /* LogOutRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCEC06B25F6A48000868498 /* LogOutRouter.swift */; };
-		1BCEC07325F6A48000868498 /* LogOutModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCEC06C25F6A48000868498 /* LogOutModels.swift */; };
-		1BCEC07425F6A48000868498 /* LogOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCEC06D25F6A48000868498 /* LogOutViewController.swift */; };
-		1BCEC07525F6A48000868498 /* LogOutAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCEC06E25F6A48000868498 /* LogOutAssembly.swift */; };
-		1BCEC07625F6A48000868498 /* LogOutInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCEC06F25F6A48000868498 /* LogOutInteractor.swift */; };
 		1BCEC0B425F6AF2000868498 /* RegPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCEC0AD25F6AF2000868498 /* RegPresenter.swift */; };
 		1BCEC0B525F6AF2000868498 /* RegWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCEC0AE25F6AF2000868498 /* RegWorker.swift */; };
 		1BCEC0B625F6AF2000868498 /* RegRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCEC0AF25F6AF2000868498 /* RegRouter.swift */; };
@@ -121,6 +115,7 @@
 		1B9146EA25D5968B00A1D1D2 /* GBShopUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GBShopUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B9146EE25D5968B00A1D1D2 /* GBShopUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBShopUITests.swift; sourceTree = "<group>"; };
 		1B9146F025D5968B00A1D1D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1BBE61A125FD3AD70021D2A9 /* UserInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoView.swift; sourceTree = "<group>"; };
 		1BC7D16E25D7B66700AF0BA2 /* AbstractErrorParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractErrorParser.swift; sourceTree = "<group>"; };
 		1BC7D17325D7B69E00AF0BA2 /* ErrorParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorParser.swift; sourceTree = "<group>"; };
 		1BC7D17825D7B6C000AF0BA2 /* DataRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRequest.swift; sourceTree = "<group>"; };
@@ -139,13 +134,6 @@
 		1BCEC05025F665EC00868498 /* AppButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppButton.swift; sourceTree = "<group>"; };
 		1BCEC05525F6660800868498 /* AppTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTextField.swift; sourceTree = "<group>"; };
 		1BCEC05A25F6675100868498 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
-		1BCEC06925F6A48000868498 /* LogOutPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutPresenter.swift; sourceTree = "<group>"; };
-		1BCEC06A25F6A48000868498 /* LogOutWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutWorker.swift; sourceTree = "<group>"; };
-		1BCEC06B25F6A48000868498 /* LogOutRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutRouter.swift; sourceTree = "<group>"; };
-		1BCEC06C25F6A48000868498 /* LogOutModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutModels.swift; sourceTree = "<group>"; };
-		1BCEC06D25F6A48000868498 /* LogOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutViewController.swift; sourceTree = "<group>"; };
-		1BCEC06E25F6A48000868498 /* LogOutAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutAssembly.swift; sourceTree = "<group>"; };
-		1BCEC06F25F6A48000868498 /* LogOutInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutInteractor.swift; sourceTree = "<group>"; };
 		1BCEC0AD25F6AF2000868498 /* RegPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegPresenter.swift; sourceTree = "<group>"; };
 		1BCEC0AE25F6AF2000868498 /* RegWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegWorker.swift; sourceTree = "<group>"; };
 		1BCEC0AF25F6AF2000868498 /* RegRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegRouter.swift; sourceTree = "<group>"; };
@@ -325,7 +313,6 @@
 			children = (
 				1BCEC06525F67F0100868498 /* UpdateUser */,
 				1BCEC06425F67EF200868498 /* Registration */,
-				1BCEC06325F67ECE00868498 /* LogOut */,
 				1BCEC04F25F665DA00868498 /* Common */,
 				1BCEC03B25F6644400868498 /* Login */,
 			);
@@ -359,6 +346,14 @@
 				1BC7D1A225D7BA4D00AF0BA2 /* Network */,
 			);
 			path = BusinessLogic;
+			sourceTree = "<group>";
+		};
+		1BBE61A025FD3ABE0021D2A9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1BBE61A125FD3AD70021D2A9 /* UserInfoView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		1BC7D16D25D7B56E00AF0BA2 /* Network */ = {
@@ -412,20 +407,6 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
-		1BCEC06325F67ECE00868498 /* LogOut */ = {
-			isa = PBXGroup;
-			children = (
-				1BCEC06925F6A48000868498 /* LogOutPresenter.swift */,
-				1BCEC06A25F6A48000868498 /* LogOutWorker.swift */,
-				1BCEC06B25F6A48000868498 /* LogOutRouter.swift */,
-				1BCEC06C25F6A48000868498 /* LogOutModels.swift */,
-				1BCEC06D25F6A48000868498 /* LogOutViewController.swift */,
-				1BCEC06E25F6A48000868498 /* LogOutAssembly.swift */,
-				1BCEC06F25F6A48000868498 /* LogOutInteractor.swift */,
-			);
-			path = LogOut;
-			sourceTree = "<group>";
-		};
 		1BCEC06425F67EF200868498 /* Registration */ = {
 			isa = PBXGroup;
 			children = (
@@ -444,6 +425,7 @@
 		1BCEC06525F67F0100868498 /* UpdateUser */ = {
 			isa = PBXGroup;
 			children = (
+				1BBE61A025FD3ABE0021D2A9 /* View */,
 				1BCEC0BE25F6B09A00868498 /* UserInfoPresenter.swift */,
 				1BCEC0BF25F6B09A00868498 /* UserInfoWorker.swift */,
 				1BCEC0C025F6B09A00868498 /* UserInfoRouter.swift */,
@@ -638,7 +620,6 @@
 				1BC7D16F25D7B66700AF0BA2 /* AbstractErrorParser.swift in Sources */,
 				1BC7D1B925D8687400AF0BA2 /* LogoutResult.swift in Sources */,
 				1B2205DF25FA8DDF0065F598 /* LoginWorker.swift in Sources */,
-				1BCEC07425F6A48000868498 /* LogOutViewController.swift in Sources */,
 				1B2205E025FA8DDF0065F598 /* LoginRouter.swift in Sources */,
 				1BC7D17925D7B6C000AF0BA2 /* DataRequest.swift in Sources */,
 				1BEEBA3F25DC54CC00268F0A /* ChangeUser.swift in Sources */,
@@ -653,10 +634,8 @@
 				1BCEC05B25F6675100868498 /* UIView.swift in Sources */,
 				1B2205E425FA8DDF0065F598 /* LoginInteractor.swift in Sources */,
 				1BCEC05625F6660800868498 /* AppTextField.swift in Sources */,
-				1BCEC07125F6A48000868498 /* LogOutWorker.swift in Sources */,
 				1BC7D19125D7B9DF00AF0BA2 /* LoginResult.swift in Sources */,
 				0A779D1F25E04C1B00F19D0D /* CatalogResult.swift in Sources */,
-				1BCEC07525F6A48000868498 /* LogOutAssembly.swift in Sources */,
 				1BCEC0B925F6AF2000868498 /* RegAssembly.swift in Sources */,
 				1BC7D1AC25D7BA8300AF0BA2 /* Auth.swift in Sources */,
 				1BC7D1BE25D868DE00AF0BA2 /* RegistrationResult.swift in Sources */,
@@ -670,27 +649,24 @@
 				0A779D3025E04FCA00F19D0D /* FetchGoodByIdRequestFactory.swift in Sources */,
 				1BCEC0B825F6AF2000868498 /* RegViewController.swift in Sources */,
 				1BCEC0B525F6AF2000868498 /* RegWorker.swift in Sources */,
+				1BBE61A225FD3AD70021D2A9 /* UserInfoView.swift in Sources */,
 				1BCEC04625F6649D00868498 /* LoginView.swift in Sources */,
 				1BC7D18C25D7B95B00AF0BA2 /* CustomDecodableSerializer.swift in Sources */,
-				1BCEC07625F6A48000868498 /* LogOutInteractor.swift in Sources */,
 				0A779D3525E04FE400F19D0D /* FetchGoodById.swift in Sources */,
 				1BCEC0CB25F6B09A00868498 /* UserInfoInteractor.swift in Sources */,
 				1B2205E325FA8DDF0065F598 /* LoginAssembly.swift in Sources */,
 				1BCEC0B725F6AF2000868498 /* RegModels.swift in Sources */,
 				1BCEC04B25F6656600868498 /* UIColor.swift in Sources */,
 				1BC7D1D125D86EB400AF0BA2 /* ChangeUserResult.swift in Sources */,
-				1BCEC07225F6A48000868498 /* LogOutRouter.swift in Sources */,
 				1BEEBA4425DC54DD00268F0A /* ChangeUserRequestFactory.swift in Sources */,
 				1B9146CF25D5968A00A1D1D2 /* SceneDelegate.swift in Sources */,
 				1BEEBA4F25DC55D700268F0A /* LogoutRequestFactory.swift in Sources */,
-				1BCEC07025F6A48000868498 /* LogOutPresenter.swift in Sources */,
 				0A779D3A25E0508300F19D0D /* GoodResult.swift in Sources */,
 				1BEEBA2725DC4BD400268F0A /* BaseURL.swift in Sources */,
 				1BCEC0C725F6B09A00868498 /* UserInfoRouter.swift in Sources */,
 				1BCEC0B425F6AF2000868498 /* RegPresenter.swift in Sources */,
 				1BEEBA3925DC52E100268F0A /* RegistrationRequestFactory.swift in Sources */,
 				1BCEC0C625F6B09A00868498 /* UserInfoWorker.swift in Sources */,
-				1BCEC07325F6A48000868498 /* LogOutModels.swift in Sources */,
 				1BC7D17425D7B69E00AF0BA2 /* ErrorParser.swift in Sources */,
 				1BCEC0CA25F6B09A00868498 /* UserInfoAssembly.swift in Sources */,
 				0A779D1225E04B9000F19D0D /* GetCatalog.swift in Sources */,

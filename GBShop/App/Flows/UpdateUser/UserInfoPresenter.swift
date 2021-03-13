@@ -9,7 +9,8 @@
 import UIKit
 
 protocol UserInfoPresentationLogic {
-    func presentSomething(response: UserInfo.Something.Response)
+    func presentUser()
+    func presentError()
 }
 
 class UserInfoPresenter: UserInfoPresentationLogic {
@@ -19,10 +20,13 @@ class UserInfoPresenter: UserInfoPresentationLogic {
         self.viewController = viewController
     }
     
-    // MARK: Do something
-    
-    func presentSomething(response: UserInfo.Something.Response) {
-        let viewModel = UserInfo.Something.ViewModel()
-        viewController?.displaySomething(viewModel: viewModel)
+    // MARK: UserInfoPresentationLogic
+
+    func presentUser() {
+        viewController?.displayUser()
+    }
+
+    func presentError() {
+        viewController?.displayError()
     }
 }
