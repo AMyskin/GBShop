@@ -39,7 +39,7 @@ extension GetCatalog: GetCatalogRequestFactory {
 extension GetCatalog {
     struct Catalor: RequestRouter {
         let baseUrl: URL
-        let method: HTTPMethod = .get
+        let method: HTTPMethod = .post
         let path: String = "catalogData.json"
         
         let pageNumber: Int

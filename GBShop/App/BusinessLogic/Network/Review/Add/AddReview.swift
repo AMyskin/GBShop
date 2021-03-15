@@ -1,19 +1,18 @@
 //
-//  FetchGoodById.swift
+//  AddReview.swift
 //  GBShop
 //
-//  Created by Alexander Myskin on 19.02.2021.
+//  Created by Alexander Myskin on 08.03.2021.
 //
-
 import Foundation
 import Alamofire
 
-class FetchGoodById: AbstractRequestFactory {
+class AddReview: AbstractRequestFactory {
     let errorParser: AbstractErrorParser
     let sessionManager: Session
     let queue: DispatchQueue
     let baseUrl = URL(string: AppApi.myURL.rawValue)!
-    
+
     init(
         errorParser: AbstractErrorParser,
         sessionManager: Session,
@@ -21,32 +20,34 @@ class FetchGoodById: AbstractRequestFactory {
         self.errorParser = errorParser
         self.sessionManager = sessionManager
         self.queue = queue
-        
+
     }
 }
 
-extension FetchGoodById: FetchGoodByIdRequestFactory {
-    func fetchGoodById(idProduct: Int,
-                       completionHandler: @escaping (AFDataResponse<GoodResult>) -> Void) {
-        let requestModel = Good(baseUrl: baseUrl, idProduct: idProduct)
-        
+extension AddReview: AddReviewRequestFactory {
+    func addReview(idUser: Int,
+                   text: String,
+                   completionHandler: @escaping (AFDataResponse<ReviewResult>) -> Void) {
+        let requestModel = Review(baseUrl: baseUrl, iduser: idUser, text: text)
+
         self.request(request: requestModel, completionHandler: completionHandler)
     }
-   
+
 }
 
-extension FetchGoodById {
-    struct Good: RequestRouter {
+extension AddReview {
+    struct Review: RequestRouter {
         let baseUrl: URL
         let method: HTTPMethod = .post
-        let path: String = "getGoodById.json"
-        
-        let idProduct: Int
+        let path: String = "addReview"
+
+        let iduser: Int
+        let text: String
         var parameters: Parameters? {
             return [
-                "id_product": idProduct
+                "id_user": iduser,
+                "text": text
             ]
         }
     }
 }
-
