@@ -10,8 +10,9 @@ import Foundation
 
 
 enum AppApi: String {
-    //case myURL = "https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/"
-    case myURL = "https://gentle-mountain-63427.herokuapp.com/"
+    case myURL = "https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/"
+    case myHerokuURL = "https://gentle-mountain-63427.herokuapp.com/"
+
 }
 
 
