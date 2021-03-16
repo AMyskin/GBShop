@@ -35,8 +35,8 @@ extension Logout: LogoutRequestFactory {
 extension Logout {
     struct Logout: RequestRouter {
         let baseUrl: URL
-        let method: HTTPMethod = .get
-        let path: String = "logout.json"
+        let method: HTTPMethod = .post
+        let path: String = "logout"
         
         let idUser: Int
         var parameters: Parameters? {
