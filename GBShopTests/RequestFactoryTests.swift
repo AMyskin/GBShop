@@ -62,7 +62,7 @@ class RequestFactoryTests: XCTestCase {
         
         let reg = expectation(description: "registration")
         registration.registration(
-            userId: 11,
+            userId: 123,
             userName: "Test",
             password: "Pass",
             email: "a@a.com",
@@ -88,7 +88,7 @@ class RequestFactoryTests: XCTestCase {
         
         let changeUser = expectation(description: "Update")
         change.changeUserData(
-            userId: 11,
+            userId: 123,
             userName: "Test",
             password: "Pass",
             email: "a@a.com",
