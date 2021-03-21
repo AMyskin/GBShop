@@ -48,4 +48,32 @@ class RequestFactory {
         let errorParser = makeErrorParser()
         return FetchGoodById(errorParser: errorParser, sessionManager: commonSession, queue: sessionQueue)
     }
+    func makeAddToBasketFactory() -> AddToBasketRequestFactory {
+        let errorParser = makeErrorParser()
+        return AddToBasket(errorParser: errorParser, sessionManager: commonSession, queue: sessionQueue)
+    }
+    func makeRemoveFromBasketFactory() -> RemoveFromBasketRequestFactory {
+        let errorParser = makeErrorParser()
+        return RemoveFromBasket(errorParser: errorParser, sessionManager: commonSession, queue: sessionQueue)
+    }
+    func makeGetUserBasketFactory() -> GetUserBasketRequestFactory {
+        let errorParser = makeErrorParser()
+        return GetUserBasket(errorParser: errorParser, sessionManager: commonSession, queue: sessionQueue)
+    }
+    func makePayBasketFactory() -> PayBasketRequestFactory {
+        let errorParser = makeErrorParser()
+        return PayBasket(errorParser: errorParser, sessionManager: commonSession, queue: sessionQueue)
+    }
+    func makeAddRevuewFactory() -> AddReviewRequestFactory {
+        let errorParser = makeErrorParser()
+        return AddReview(errorParser: errorParser, sessionManager: commonSession, queue: sessionQueue)
+    }
+    func makeApproveReviewFactory() -> ApproveReviewRequestFactory {
+        let errorParser = makeErrorParser()
+        return ApproveReview(errorParser: errorParser, sessionManager: commonSession, queue: sessionQueue)
+    }
+    func makeRemoveReviewFactory() -> RemoveReviewRequestFactory {
+        let errorParser = makeErrorParser()
+        return RemoveReview(errorParser: errorParser, sessionManager: commonSession, queue: sessionQueue)
+    }
 }

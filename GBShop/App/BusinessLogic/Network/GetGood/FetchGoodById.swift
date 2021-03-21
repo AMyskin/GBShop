@@ -12,7 +12,7 @@ class FetchGoodById: AbstractRequestFactory {
     let errorParser: AbstractErrorParser
     let sessionManager: Session
     let queue: DispatchQueue
-    let baseUrl = URL(string: AppApi.myURL.rawValue)!
+    let baseUrl = URL(string: AppApi.myHerokuURL.rawValue)!
     
     init(
         errorParser: AbstractErrorParser,
@@ -38,8 +38,8 @@ extension FetchGoodById: FetchGoodByIdRequestFactory {
 extension FetchGoodById {
     struct Good: RequestRouter {
         let baseUrl: URL
-        let method: HTTPMethod = .get
-        let path: String = "getGoodById.json"
+        let method: HTTPMethod = .post
+        let path: String = "getGoodById"
         
         let idProduct: Int
         var parameters: Parameters? {

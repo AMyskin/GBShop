@@ -27,7 +27,7 @@ class RequestFactoryTests: XCTestCase {
         let auth = try XCTUnwrap(requestFactory).makeAuthRequestFatory()
         
         let signedIn = expectation(description: "log in")
-        auth.login(userName: "test", password: "test") { (response) in
+        auth.login(userName: "test", password: "password") { (response) in
             switch response.result {
             case .success(let model):
                 XCTAssertEqual(model.user.id, 123)
@@ -44,7 +44,7 @@ class RequestFactoryTests: XCTestCase {
         let logout = try XCTUnwrap(requestFactory).makeLogoutRequestFatory()
         
         let signedOut = expectation(description: "log out")
-        logout.logout(userId: 1) { (response) in
+        logout.logout(userId: 123) { (response) in
             switch response.result {
             case .success(let login):
                 XCTAssertEqual(login.result, 1)
@@ -62,7 +62,7 @@ class RequestFactoryTests: XCTestCase {
         
         let reg = expectation(description: "registration")
         registration.registration(
-            userId: 11,
+            userId: 123,
             userName: "Test",
             password: "Pass",
             email: "a@a.com",
@@ -88,7 +88,7 @@ class RequestFactoryTests: XCTestCase {
         
         let changeUser = expectation(description: "Update")
         change.changeUserData(
-            userId: 11,
+            userId: 123,
             userName: "Test",
             password: "Pass",
             email: "a@a.com",
@@ -115,8 +115,8 @@ class RequestFactoryTests: XCTestCase {
         catalog.getCatalog(pageNumber: 1, idCategory: 1) { response in
             switch response.result {
             case .success(let request):
-                XCTAssertEqual(request.count, 2)
-                XCTAssertEqual(request.first?.productName, "Ноутбук")
+                XCTAssertEqual(request.contents?.count, 2)
+                XCTAssertEqual(request.contents?.first?.productName, "Ноутбук")
                 catalogUser.fulfill()
             case .failure(let err):
                 XCTFail(err.localizedDescription)
@@ -135,7 +135,7 @@ class RequestFactoryTests: XCTestCase {
             switch response.result {
             case .success(let request):
                 XCTAssertEqual(request.result, 1)
-                XCTAssertEqual(request.productName, "Ноутбук")
+                XCTAssertEqual(request.productName, "Имя товара")
                 googUser.fulfill()
             case .failure(let err):
                 XCTFail(err.localizedDescription)

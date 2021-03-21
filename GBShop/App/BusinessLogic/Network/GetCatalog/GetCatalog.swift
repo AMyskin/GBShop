@@ -12,7 +12,7 @@ class GetCatalog: AbstractRequestFactory {
     let errorParser: AbstractErrorParser
     let sessionManager: Session
     let queue: DispatchQueue
-    let baseUrl = URL(string: AppApi.myURL.rawValue)!
+    let baseUrl = URL(string: AppApi.myHerokuURL.rawValue)!
     
     init(
         errorParser: AbstractErrorParser,
@@ -28,7 +28,7 @@ class GetCatalog: AbstractRequestFactory {
 extension GetCatalog: GetCatalogRequestFactory {
     func getCatalog(pageNumber: Int,
                     idCategory: Int,
-                    completionHandler: @escaping (AFDataResponse<[Product]>) -> Void) {
+                    completionHandler: @escaping (AFDataResponse<CatalogResult>) -> Void) {
         let requestModel = Catalor(baseUrl: baseUrl, pageNumber: pageNumber, idCategory: idCategory)
                                          
         self.request(request: requestModel, completionHandler: completionHandler)
@@ -39,8 +39,8 @@ extension GetCatalog: GetCatalogRequestFactory {
 extension GetCatalog {
     struct Catalor: RequestRouter {
         let baseUrl: URL
-        let method: HTTPMethod = .get
-        let path: String = "catalogData.json"
+        let method: HTTPMethod = .post
+        let path: String = "getCatalog"
         
         let pageNumber: Int
         let idCategory: Int
