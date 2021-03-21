@@ -42,9 +42,10 @@ final class LoginViewController: UIViewController, LoginDisplayLogic {
         view.addSubview(contentView.prepareForAutoLayout())
         contentView.pinEdgesToSuperviewEdges()
         contentView.callbackMainButtonAction = { [weak self] in
-            if let login = self?.contentView.userTextField.textField.text,
-               let password = self?.contentView.passwordTextField.textField.text {
-                self?.interactor?.fetchUser(login: login, password: password)
+            guard let self = self else { return }
+            if let login = self.contentView.userTextField.textField.text,
+               let password = self.contentView.passwordTextField.textField.text {
+                self.interactor?.fetchUser(login: login, password: password)
             }
         }
 

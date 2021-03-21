@@ -73,14 +73,11 @@ class AppTextField: UIView {
     }
 
     private func setUpConstraints() {
-        let textFieldConstraints = [
+        NSLayoutConstraint.activate([
             textField.topAnchor.constraint(equalTo: self.topAnchor),
             textField.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             textField.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             textField.bottomAnchor.constraint(equalTo: self.bottomAnchor)
-        ]
-
-        [textFieldConstraints]
-            .forEach(NSLayoutConstraint.activate(_:))
+        ])
     }
 }
