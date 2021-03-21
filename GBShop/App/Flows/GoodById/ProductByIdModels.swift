@@ -10,13 +10,9 @@ import UIKit
 
 enum ProductById {
     // MARK: Use cases
-    
-    enum Something {
-        struct Request {
-        }
-        struct Response {
-        }
-        struct ViewModel {
-        }
+    struct ViewModel {
+        var name: String
+        var price: String
+        var description: String
     }
 }

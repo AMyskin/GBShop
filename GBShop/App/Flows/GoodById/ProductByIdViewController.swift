@@ -8,7 +8,7 @@
 import UIKit
 
 protocol ProductByIdDisplayLogic: AnyObject {
-    func displaySomething(viewModel: ProductById.Something.ViewModel)
+    func displaySomething(product: GoodResult)
 }
 
 final class ProductByIdViewController: UIViewController, ProductByIdDisplayLogic {
@@ -16,6 +16,7 @@ final class ProductByIdViewController: UIViewController, ProductByIdDisplayLogic
     var router: ProductByIdRoutingLogic?
 
     private var product: GoodResult
+    var contentView = ProductView()
 
     init(product: GoodResult) {
         self.product = product
@@ -31,6 +32,7 @@ final class ProductByIdViewController: UIViewController, ProductByIdDisplayLogic
     
     private func setupUI() {
         view.backgroundColor = .green
+        setupMainView()
     }
     
     // MARK: View lifecycle
@@ -38,19 +40,28 @@ final class ProductByIdViewController: UIViewController, ProductByIdDisplayLogic
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        doSomething()
+        displaySomething(product: product)
+    }
+
+    private func setupMainView() {
+        view.addSubview(contentView.prepareForAutoLayout())
+        contentView.pinEdgesToSuperviewEdges()
+
     }
     
     // MARK: Do something
     
     //@IBOutlet weak var nameTextField: UITextField!
     
-    func doSomething() {
-        let request = ProductById.Something.Request()
-        //interactor?.doSomething(request: request)
-    }
+
     
-    func displaySomething(viewModel: ProductById.Something.ViewModel) {
-        //nameTextField.text = viewModel.name
+    func displaySomething(product: GoodResult) {
+
+        let viewModel = ProductById.ViewModel(
+            name: product.productName,
+            price: "\(product.productPrice)",
+            description: product.productDescription)
+
+        contentView.model = ProductView.Model(viewModel: viewModel)
     }
 }

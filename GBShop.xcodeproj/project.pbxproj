@@ -279,7 +279,6 @@
 		1B2205D025FA8CA60065F598 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1B2205D725FA8DDF0065F598 /* LoginPresenter.swift */,
 				1BCEC04525F6649D00868498 /* LoginView.swift */,
 			);
 			path = View;
@@ -439,8 +438,8 @@
 				1BB160592607C8ED00235EB2 /* View */,
 				1BB1608D2607CA5B00235EB2 /* ProductByIdPresenter.swift */,
 				1BB1608E2607CA5B00235EB2 /* ProductByIdWorker.swift */,
-				1BB1608F2607CA5B00235EB2 /* ProductByIdRouter.swift */,
 				1BB160902607CA5B00235EB2 /* ProductByIdModels.swift */,
+				1BB1608F2607CA5B00235EB2 /* ProductByIdRouter.swift */,
 				1BB160912607CA5B00235EB2 /* ProductByIdViewController.swift */,
 				1BB160922607CA5B00235EB2 /* ProductByIdAssembly.swift */,
 				1BB160932607CA5B00235EB2 /* ProductByIdInteractor.swift */,
@@ -597,6 +596,7 @@
 			children = (
 				1B2205D025FA8CA60065F598 /* View */,
 				1B2205D825FA8DDF0065F598 /* LoginWorker.swift */,
+				1B2205D725FA8DDF0065F598 /* LoginPresenter.swift */,
 				1B2205D925FA8DDF0065F598 /* LoginRouter.swift */,
 				1B2205DA25FA8DDF0065F598 /* LoginModels.swift */,
 				1B2205DB25FA8DDF0065F598 /* LoginViewController.swift */,

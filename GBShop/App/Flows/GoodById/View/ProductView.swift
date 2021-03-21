@@ -8,22 +8,93 @@ import UIKit
 
 final class ProductView: UIView {
 
-    // MARK: - Properties
-    public var callbackMainButtonAction: (() -> Void)?
-
-    var model = Model(product: "asd") {
+    var model = Model(viewModel: ProductById.ViewModel(name: "", price: "", description: "")) {
         didSet {
-
+            name.text = model.viewModel.name
+            price.text = model.viewModel.price
+            decr.text = model.viewModel.description
         }
     }
 
-    var submitButtonAction: ((_ amount: Double) -> Void)?
-    private lazy var titleLabel = UILabel()
-    private lazy var scrollView = UIScrollView()
-    private lazy var goodsStackView = UIStackView()
-    private lazy var stackView = UIStackView()
-    private lazy var actionButton = AppButton()
+    // MARK: - Properties
+    public var callbackAddAction: (() -> Void)?
+    public var callbackDeleteAction: (() -> Void)?
 
+    lazy var titleLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 20, weight: .black)
+        label.text = "Продукт"
+        label.textAlignment = .center
+        label.textColor = .headerTextColor
+        return label
+    }()
+
+    lazy var nameLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Название"
+        label.textAlignment = .center
+        label.textColor = .headerTextColor
+        return label
+    }()
+
+    lazy var name: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .center
+        return label
+    }()
+
+    lazy var priceLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Цена"
+        label.textAlignment = .center
+        label.textColor = .headerTextColor
+        return label
+    }()
+
+    lazy var price: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .center
+        return label
+    }()
+
+    lazy var dLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Описание"
+        label.textAlignment = .center
+        label.textColor = .headerTextColor
+        return label
+    }()
+
+    lazy var decr: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .center
+        return label
+    }()
+
+    private lazy var stackView = UIStackView()
+
+
+
+    lazy var addReview: AppButton = {
+        let button = AppButton()
+        button.setTitle("Добавить отзыв", for: UIControl.State())
+        button.addTarget(self, action: #selector(tappedButton), for: .touchUpInside)
+        return button
+    }()
+
+    lazy var delReview: AppButton = {
+        let button = AppButton()
+        button.setTitle("Удалить отзыв", for: UIControl.State())
+        button.addTarget(self, action: #selector(tappedButton2), for: .touchUpInside)
+        return button
+    }()
+
+    @objc func tappedButton() {
+        callbackAddAction?()
+    }
+    @objc func tappedButton2() {
+        callbackDeleteAction?()
+    }
 
     // MARK: - Initialization
     override init(frame: CGRect) {
@@ -37,70 +108,38 @@ final class ProductView: UIView {
 
     // MARK: - Setup views
     private func setupUI() {
-        //backgroundColor = .red
-
-        setupTitleLabel()
-        setupActionButton()
-
-        setupGoodsStackView()
         setupStackView()
-        setupScrollView()
-        setupActionButton()
-    }
-
-    private func setupTitleLabel() {
-        titleLabel.prepareForAutoLayout()
-        titleLabel.font = .systemFont(ofSize: 20, weight: .black)
-        titleLabel.text = "Каталог Товаров"
-        titleLabel.textAlignment = .center
-        titleLabel.textColor = .headerTextColor
-    }
-
-    private func setupScrollView() {
-        addSubview(scrollView.prepareForAutoLayout())
-        scrollView.showsVerticalScrollIndicator = false
-        scrollView.pinEdgesToSuperviewEdges(excluding: .bottom)
-        scrollView.bottomAnchor ~= actionButton.topAnchor + 16
-    }
-
-    private func setupGoodsStackView() {
-        goodsStackView.axis = .vertical
-        goodsStackView.spacing = 16
     }
 
     private func setupStackView() {
         stackView = UIStackView(arrangedSubviews: [
             titleLabel,
-            goodsStackView
+            nameLabel,
+            name,
+            priceLabel,
+            price,
+            dLabel,
+            decr,
+            addReview,
+            delReview,
+
+
         ])
-        scrollView.addSubview(stackView.prepareForAutoLayout())
+        addSubview(stackView.prepareForAutoLayout())
         stackView.spacing = 32
         stackView.axis = .vertical
-        stackView.pinEdgesToSuperviewEdges()
-
-    }
-
-    private func setupActionButton() {
-        addSubview(actionButton.prepareForAutoLayout())
-        actionButton.bottomAnchor ~= bottomAnchor - 32
-        actionButton.leftAnchor ~= leftAnchor + 32
-        actionButton.rightAnchor ~= rightAnchor - 32
-        actionButton.setTitle("Выход", for: UIControl.State())
-        actionButton.addTarget(self, action: #selector(tappedButton), for: .touchUpInside)
-    }
-
-    // MARK: - Actions
-
-    @objc func tappedButton() {
-        callbackMainButtonAction?()
+        stackView.topAnchor ~= topAnchor + 120
+        stackView.leftAnchor ~= leftAnchor + 16
+        stackView.rightAnchor ~= rightAnchor - 16
     }
 
 }
 
+
 // MARK: - Model
 extension ProductView {
     struct Model {
-        var product: String
+        var viewModel: ProductById.ViewModel
     }
 
 }

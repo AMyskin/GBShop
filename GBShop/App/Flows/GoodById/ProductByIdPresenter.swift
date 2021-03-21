@@ -9,7 +9,7 @@
 import UIKit
 
 protocol ProductByIdPresentationLogic {
-    func presentSomething(response: ProductById.Something.Response)
+
 }
 
 class ProductByIdPresenter: ProductByIdPresentationLogic {
@@ -22,9 +22,5 @@ class ProductByIdPresenter: ProductByIdPresentationLogic {
     }
     
     // MARK: Do something
-    
-    func presentSomething(response: ProductById.Something.Response) {
-        let viewModel = ProductById.Something.ViewModel()
-        viewController?.displaySomething(viewModel: viewModel)
-    }
+
 }
