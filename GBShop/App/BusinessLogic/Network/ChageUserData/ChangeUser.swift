@@ -12,7 +12,7 @@ class ChangeUser: AbstractRequestFactory {
     let errorParser: AbstractErrorParser
     let sessionManager: Session
     let queue: DispatchQueue
-    let baseUrl = URL(string: AppApi.myURL.rawValue)!
+    let baseUrl = URL(string: AppApi.myHerokuURL.rawValue)!
     
     init(
         errorParser: AbstractErrorParser,
@@ -51,8 +51,8 @@ extension ChangeUser: ChangeUserRequestFactory {
 extension ChangeUser {
     struct ChangeUserData: RequestRouter {
         let baseUrl: URL
-        let method: HTTPMethod = .get
-        let path: String = "changeUserData.json"
+        let method: HTTPMethod = .post
+        let path: String = "updateUser"
         
         let idUser: Int
         let login: String
