@@ -15,11 +15,16 @@ protocol LoginWorkerLogic {
 
 class LoginWorker: LoginWorkerLogic {
 
-    let requestFactory = RequestFactory().makeAuthRequestFatory()
+    let requestFactory: RequestFactory?
+
+    init(_ requestFactory: RequestFactory) {
+        self.requestFactory = requestFactory
+    }
 
     func fetchUser(userName: String, password: String,
                    completion: @escaping (LoginResult) -> Void){
-        requestFactory.login(userName: userName, password: password) { (response) in
+        let makeAuthRequestFatory = requestFactory?.makeAuthRequestFatory()
+        makeAuthRequestFatory?.login(userName: userName, password: password) { (response) in
             DispatchQueue.main.async {
                 switch response.result {
                 case .success(let model):

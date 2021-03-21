@@ -9,11 +9,11 @@
 import Foundation
 
 final class GoodsAssembly {
-    static func assembly() -> GoodsViewController {
+    static func assembly(_ requestFactory : RequestFactory) -> GoodsViewController {
         let viewController = GoodsViewController()
         let presenter = GoodsPresenter(viewController: viewController)
-        let router = GoodsRouter(viewController: viewController)
-        let worker = GoodsWorker()
+        let router = GoodsRouter(viewController: viewController, requestFactory: requestFactory)
+        let worker = GoodsWorker(requestFactory)
         let interactor = GoodsInteractor(presenter: presenter, worker: worker)
         viewController.interactor = interactor
         viewController.router = router

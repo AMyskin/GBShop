@@ -142,7 +142,7 @@ final class GoodsView: UIView {
         actionButton.bottomAnchor ~= bottomAnchor - 32
         actionButton.leftAnchor ~= leftAnchor + 32
         actionButton.rightAnchor ~= rightAnchor - 32
-        actionButton.setTitle("Выход", for: UIControl.State())
+        actionButton.setTitle("Показать выбранный товар :)", for: UIControl.State())
         actionButton.addTarget(self, action: #selector(tappedButton), for: .touchUpInside)
     }
 

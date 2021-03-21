@@ -10,13 +10,14 @@ import UIKit
 protocol GoodsDisplayLogic: AnyObject {
     func displayGoods(viewModel : GoodsModel.ViewModel)
     func displayError(alert: UIAlertController)
+    func displayProduct(viewModel: GoodResult)
 }
 
 final class GoodsViewController: UIViewController, GoodsDisplayLogic {
 
 
     var interactor: GoodsBusinessLogic?
-    var router: (NSObjectProtocol & GoodsRoutingLogic & GoodsDataPassing)?
+    var router:  GoodsRoutingLogic?
 
     var contentView = GoodsView()
     
@@ -39,8 +40,6 @@ final class GoodsViewController: UIViewController, GoodsDisplayLogic {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = false
-        navigationItem.title = "Регистрация"
-       // displayGoods()
         setupUI()
         fetchData()
     }
@@ -53,6 +52,15 @@ final class GoodsViewController: UIViewController, GoodsDisplayLogic {
 
     func displayGoods(viewModel : GoodsModel.ViewModel) {
         contentView.model = GoodsView.Model(goods: viewModel.goods)
+        contentView.callbackMainButtonAction = { [weak self] in
+            guard let self = self else { return }
+            let productId = 1
+            self.interactor?.fetchProduct(productId: productId)
+        }
+    }
+
+    func displayProduct(viewModel: GoodResult) {
+        router?.routeToProduct(viewModel)
     }
 
     func displayError(alert: UIAlertController) {

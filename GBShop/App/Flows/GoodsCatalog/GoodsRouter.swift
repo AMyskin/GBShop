@@ -7,53 +7,34 @@
 //
 
 import UIKit
-
-@objc protocol GoodsRoutingLogic {
-    //func routeToSomewhere(segue: UIStoryboardSegue?)
+protocol GoodsRoutingLogic {
+    func routeToProduct(_ product: GoodResult)
 }
 
 protocol GoodsDataPassing {
     var dataStore: GoodsDataStore? { get }
 }
 
-final class GoodsRouter: NSObject, GoodsRoutingLogic, GoodsDataPassing {
-    weak var viewController: GoodsViewController?
+final class GoodsRouter: GoodsRoutingLogic, GoodsDataPassing {
+    private weak var  viewController: GoodsViewController?
+    private weak var requestFactory: RequestFactory?
+
 
     // MARK: - Init
 
-    init(viewController: GoodsViewController) {
+    init(viewController: GoodsViewController, requestFactory: RequestFactory) {
         self.viewController = viewController
+        self.requestFactory = requestFactory
     }
     var dataStore: GoodsDataStore?
 
     // MARK: Routing
 
-    //func routeToSomewhere(segue: UIStoryboardSegue?)
-    //{
-    //  if let segue = segue {
-    //    let destinationVC = segue.destination as! SomewhereViewController
-    //    var destinationDS = destinationVC.router!.dataStore!
-    //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-    //  } else {
-    //    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-    //    let destinationVC = storyboard.instantiateViewController(withIdentifier: "SomewhereViewController") as! SomewhereViewController
-    //    var destinationDS = destinationVC.router!.dataStore!
-    //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-    //    navigateToSomewhere(source: viewController!, destination: destinationVC)
-    //  }
-    //}
+    func routeToProduct(_ product: GoodResult) {
+        if let requestFactory = requestFactory {
+            let productAssembly = ProductByIdAssembly.assembly(requestFactory , product)
+            viewController?.navigationController?.pushViewController(productAssembly, animated: true)
+        }
+    }
 
-    // MARK: Navigation
-
-    //func navigateToSomewhere(source: GoodsViewController, destination: SomewhereViewController)
-    //{
-    //  source.show(destination, sender: nil)
-    //}
-
-    // MARK: Passing data
-
-    //func passDataToSomewhere(source: GoodsDataStore, destination: inout SomewhereDataStore)
-    //{
-    //  destination.name = source.name
-    //}
 }

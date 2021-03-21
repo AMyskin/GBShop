@@ -11,6 +11,7 @@ import UIKit
 protocol GoodsPresentationLogic {
     func presentGoods(contents: [Product]?)
     func presentError()
+    func presentProduct(contents: GoodResult)
 }
 
 class GoodsPresenter: GoodsPresentationLogic {
@@ -48,14 +49,10 @@ class GoodsPresenter: GoodsPresentationLogic {
             let viewModel = GoodsModel.ViewModel(goods: goods)
 
             viewController?.displayGoods(viewModel: viewModel)
-
         }
+    }
 
-
-
-
-
-
-        
+    func presentProduct(contents: GoodResult) {
+        viewController?.displayProduct(viewModel: contents)
     }
 }

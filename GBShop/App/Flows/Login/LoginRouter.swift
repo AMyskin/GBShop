@@ -15,12 +15,16 @@ protocol LoginRoutingLogic {
 }
 
 final class LoginRouter:  LoginRoutingLogic {
-    weak var viewController: LoginViewController?
+    private weak var viewController: LoginViewController?
+
+    private weak var requestFactory: RequestFactory?
+
 
     // MARK: - Init
 
-    init(viewController: LoginViewController) {
+    init(viewController: LoginViewController, requestFactory: RequestFactory) {
         self.viewController = viewController
+        self.requestFactory = requestFactory
     }
 
     func routeToUserInfo() {
@@ -34,7 +38,9 @@ final class LoginRouter:  LoginRoutingLogic {
     }
 
     func routeToGoodsInfo() {
-        let goodsAssembly = GoodsAssembly.assembly()
-        viewController?.navigationController?.pushViewController(goodsAssembly, animated: true)
+        if let requestFactory = requestFactory {
+            let goodsAssembly = GoodsAssembly.assembly(requestFactory)
+            viewController?.navigationController?.pushViewController(goodsAssembly, animated: true)
+        }
     }
 }

@@ -10,6 +10,7 @@ import UIKit
 
 protocol GoodsBusinessLogic {
     func fetchCatalog()
+    func fetchProduct(productId: Int)
 }
 
 protocol GoodsDataStore {
@@ -39,5 +40,16 @@ final class GoodsInteractor: GoodsBusinessLogic, GoodsDataStore {
             }
         }
 
+    }
+
+    func fetchProduct(productId: Int) {
+        worker.fetchProduct(id: productId) { (response) in
+            switch response.result{
+            case 1:
+                self.presenter.presentProduct(contents: response)
+            default:
+                self.presenter.presentError()
+            }
+        }
     }
 }
