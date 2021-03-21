@@ -115,8 +115,8 @@ class RequestFactoryTests: XCTestCase {
         catalog.getCatalog(pageNumber: 1, idCategory: 1) { response in
             switch response.result {
             case .success(let request):
-                XCTAssertEqual(request.count, 2)
-                XCTAssertEqual(request.first?.productName, "Ноутбук")
+                XCTAssertEqual(request.contents?.count, 2)
+                XCTAssertEqual(request.contents?.first?.productName, "Ноутбук")
                 catalogUser.fulfill()
             case .failure(let err):
                 XCTFail(err.localizedDescription)
@@ -135,7 +135,7 @@ class RequestFactoryTests: XCTestCase {
             switch response.result {
             case .success(let request):
                 XCTAssertEqual(request.result, 1)
-                XCTAssertEqual(request.productName, "Ноутбук")
+                XCTAssertEqual(request.productName, "Имя товара")
                 googUser.fulfill()
             case .failure(let err):
                 XCTFail(err.localizedDescription)

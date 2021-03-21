@@ -36,8 +36,7 @@ final class LoginInteractor: LoginBusinessLogic, LoginDataStore {
 
             switch response.result{
             case 1:
-                let user = Login.Response(user: response.user)
-                self.presenter.presentUser(user: user.user)
+                self.presenter.presentGoods()
             default:
                 self.presenter.presentError()
             }

@@ -10,6 +10,7 @@ import UIKit
 
 protocol LoginRoutingLogic {
     func routeToUserInfo()
+    func routeToGoodsInfo()
     func routeToReg()
 }
 
@@ -30,5 +31,10 @@ final class LoginRouter:  LoginRoutingLogic {
     func routeToReg() {
         let userAssembly = RegAssembly.assembly()
         viewController?.navigationController?.pushViewController(userAssembly, animated: true)
+    }
+
+    func routeToGoodsInfo() {
+        let goodsAssembly = GoodsAssembly.assembly()
+        viewController?.navigationController?.pushViewController(goodsAssembly, animated: true)
     }
 }

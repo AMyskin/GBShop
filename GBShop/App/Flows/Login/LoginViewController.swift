@@ -8,7 +8,7 @@
 import UIKit
 
 protocol LoginDisplayLogic: AnyObject {
-    func displayUser(viewModel: Login.ViewModel)
+    func displayGoods()
     func displayError()
 }
 
@@ -54,8 +54,8 @@ final class LoginViewController: UIViewController, LoginDisplayLogic {
         }
     }
 
-    func displayUser(viewModel: Login.ViewModel) {
-        router?.routeToUserInfo()
+    func displayGoods() {
+        router?.routeToGoodsInfo()
     }
 
     func displayError() {

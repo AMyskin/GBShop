@@ -9,7 +9,7 @@ import XCTest
 import Alamofire
 @testable import GBShop
 
-class ReviewTests: XCTestCase {
+class BasketTets: XCTestCase {
 
     func testAddToBasket() throws {
 

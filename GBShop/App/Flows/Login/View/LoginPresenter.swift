@@ -9,7 +9,7 @@
 import UIKit
 
 protocol LoginPresentationLogic {
-    func presentUser(user: User)
+    func presentGoods()
     func presentError()
 }
 
@@ -24,9 +24,8 @@ class LoginPresenter: LoginPresentationLogic {
     
     // MARK: LoginPresentationLogic
 
-    func presentUser(user: User) {
-        let viewModel = Login.ViewModel(user: user)
-        viewController?.displayUser(viewModel: viewModel)
+    func presentGoods() {
+        viewController?.displayGoods()
     }
 
     func presentError() {

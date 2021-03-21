@@ -30,6 +30,7 @@ final class LoginView: UIView {
 
     lazy var passwordTextField: AppTextField = {
         let textField = AppTextField(title: "Пароль")
+        textField.textField.text = "password"
         textField.textField.isSecureTextEntry = true
         return textField
     }()

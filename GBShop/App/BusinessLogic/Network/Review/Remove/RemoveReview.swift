@@ -12,7 +12,7 @@ class RemoveReview: AbstractRequestFactory {
     let errorParser: AbstractErrorParser
     let sessionManager: Session
     let queue: DispatchQueue
-    let baseUrl = URL(string: AppApi.myURL.rawValue)!
+    let baseUrl = URL(string: AppApi.myHerokuURL.rawValue)!
     
     init(
         errorParser: AbstractErrorParser,
